@@ -15,3 +15,29 @@ document.querySelectorAll(".reaction").forEach(el => {
     el.innerText = "✔ " + el.innerText;
   });
 });
+
+document.querySelectorAll(".reactions").forEach(block => {
+  const briefId = block.dataset.briefId;
+
+  block.querySelectorAll(".reaction").forEach(btn => {
+    const reactionType = btn.dataset.reaction;
+    const key = `reaction_${briefId}_${reactionType}`;
+
+    // Load saved state
+    if (localStorage.getItem(key)) {
+      btn.innerText = "✔ " + btn.innerText;
+      btn.style.pointerEvents = "none";
+      btn.style.opacity = "0.6";
+    }
+
+    btn.addEventListener("click", () => {
+      localStorage.setItem(key, "true");
+
+      btn.innerText = "✔ " + btn.innerText;
+      btn.style.pointerEvents = "none";
+      btn.style.opacity = "0.6";
+
+      console.log("Saved reaction:", briefId, reactionType);
+    });
+  });
+});
