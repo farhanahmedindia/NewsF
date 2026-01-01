@@ -1,200 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Risk Feed</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f5f5f5;
-    color: #333;
-  }
-  header {
-    background: #1a73e8;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  .container {
-    padding: 20px;
-  }
-  .profile-selector {
-    margin-bottom: 20px;
-  }
-  .news-card {
-    background: white;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
-    border-left: 4px solid #1a73e8;
-  }
-  .news-card h3 {
-    margin: 0;
-  }
-  .news-card p {
-    margin: 8px 0;
-  }
-  .tag {
-    background: #e0e0e0;
-    border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 12px;
-    display: inline-block;
-    margin-right: 6px;
-  }
-</style>
+  <title>Latest Security Briefs — RiskBrief</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header>
-  <h1>Cyber Risk Feed for Founders</h1>
-  <p>Select your company profile to see relevant news & insights</p>
-</header>
-
 <div class="container">
 
-  <!-- Profile Selector -->
-  <div class="profile-selector">
-    <label for="profileSelect"><strong>Choose a profile:</strong></label>
-    <select id="profileSelect">
-      <option value="">-- Select --</option>
-      <option value="ecommerce_india">E-commerce Company (India)</option>
-      <option value="saas_global">SaaS Startup (Global)</option>
-      <option value="crypto_app">Crypto App / Wallet Product</option>
-      <option value="dev_company">Developer Tools / NPM Ecosystem</option>
-    </select>
+  <h1>Founder Security Briefs</h1>
+  <p>
+    Security news translated into plain language for founders and small teams.
+  </p>
+
+  <!-- BRIEF CARD -->
+  <div class="card" data-brief-id="001">
+    <h2>Email phishing attacks increasing against Indian businesses</h2>
+    <div class="meta">India · Email risk · Jan 2026</div>
+
+    <p>
+      Fake emails are being used to trick employees into clicking malicious links.
+      A single click can allow attackers remote access.
+    </p>
+
+    <ul>
+      <li>Most attacks start with email</li>
+      <li>Small teams are common targets</li>
+      <li>No technical skills required by attackers</li>
+    </ul>
+
+    <div class="reactions">
+      <span class="reaction" data-reaction="useful">👍 Useful</span>
+      <span class="reaction" data-reaction="clear">💡 Clear</span>
+      <span class="reaction" data-reaction="concern">⚠️ Concerning</span>
+    </div>
+
+    <a class="read-more" href="briefs/001.html"
+       onclick="trackFullRead('001')">
+      Read full brief →
+    </a>
   </div>
 
-  <!-- News Area -->
-  <div id="newsContainer"></div>
-  
 </div>
 
-<script>
-  // Demo news data (simplified)
-  const newsData = [
-    {
-      title: "Rondodox botnet exploits critical flaw",
-      url: "http://thehackernews.com/2026/01/rondodox-botnet-exploits-critical.html",
-      tags: ["botnet","critical-fix","global"],
-      summary: "A new botnet called Rondodox is exploiting a critical vulnerability. This could affect connected infrastructure.",
-      impact: "If your service uses exposed APIs or outdated servers, this may expose you to remote takeover or disruption.",
-      actions: ["Update servers and apply patches", "Monitor suspicious connections"]
-    },
-    {
-      title: "Trust Wallet Chrome extension hack",
-      url: "https://thehackernews.com/2025/12/trust-wallet-chrome-extension-hack.html",
-      tags: ["crypto","extension","india","global"],
-      summary: "A malicious update to a wallet browser extension was used to steal funds from users.",
-      impact: "Crypto apps and wallet integrations can be compromised via browser tooling attacks.",
-      actions: ["Warn users about extension risks", "Educate about official installs"]
-    },
-    {
-      title: "DarkSpectre browser extension campaigns",
-      url: "https://thehackernews.com/2025/12/darkspectre-browser-extension-campaigns.html",
-      tags: ["extension","browser","malware"],
-      summary: "Threat actors spread malicious browser extensions to inject ads and collect user data.",
-      impact: "Any online business that relies on browser sessions can see customer data leakage.",
-      actions: ["Advise customers to audit extensions", "Whitelist trusted extensions only"]
-    },
-    {
-      title: "IBM warns of critical API Connect bug",
-      url: "https://thehackernews.com/2025/12/ibm-warns-of-critical-api-connect-bug.html",
-      tags: ["critical-fix","api","global"],
-      summary: "IBM issued a warning about a critical API Connect vulnerability.",
-      impact: "SaaS and API dependent companies should patch immediately to avoid remote exploit.",
-      actions: ["Apply vendor patch", "Run vulnerability scans"]
-    },
-    {
-      title: "Modified Shai-Hulud malware spotted",
-      url: "https://thehackernews.com/2025/12/researchers-spot-modified-shai-hulud.html",
-      tags: ["malware","global","email"],
-      summary: "Researchers found a new variant of the Shai-Hulud malware leveraging evasion techniques.",
-      impact: "Malware variants can bypass traditional antivirus — email hygiene and detection matters.",
-      actions: ["Educate team on phishing", "Add endpoint monitoring"]
-    },
-    {
-      title: "Malicious NPM packages used in attacks",
-      url: "https://thehackernews.com/2025/12/27-malicious-npm-packages-used-as.html",
-      tags: ["npm","developer","supply-chain"],
-      summary: "Attackers used malicious npm packages for supply chain abuse.",
-      impact: "Developers pulling npm modules risk injecting bad code into production.",
-      actions: ["Audit dependencies", "Use package integrity tools"]
-    },
-    {
-      title: "Silver Fox targets Indian users with phishing",
-      url: "https://thehackernews.com/2025/12/silver-fox-targets-indian-users-with.html",
-      tags: ["phishing","email","india"],
-      summary: "Phishing emails containing malware are being spread targeting Indian users.",
-      impact: "Email-based phishing remains a primary breach vector for SMBs.",
-      actions: ["Enable MFA", "Train staff on phishing awareness"]
-    },
-    {
-      title: "Mustang Panda uses signed kernel driver",
-      url: "https://thehackernews.com/2025/12/mustang-panda-uses-signed-kernel-driver.html",
-      tags: ["malware","kernel","global"],
-      summary: "Mustang Panda group is deploying malware using a signed kernel driver.",
-      impact: "Kernel-level attacks can evade many security tools — awareness & patching required.",
-      actions: ["Patch OS", "Enable threat detection"]
-    }
-  ];
-
-  const profileTags = {
-    "ecommerce_india": ["india","email","extension"],
-    "saas_global": ["critical-fix","api","malware"],
-    "crypto_app": ["crypto","extension"],
-    "dev_company": ["npm","developer","supply-chain"]
-  };
-
-  // Filter news based on profile
-  function filterNews(profile) {
-    const tags = profileTags[profile] || [];
-    return newsData.filter(item =>
-      item.tags.some(tag => tags.includes(tag))
-    );
-  }
-
-  // Display filtered news
-  function showNews(profile) {
-    const container = document.getElementById("newsContainer");
-    container.innerHTML = "";
-
-    if (!profile) {
-      container.innerHTML = "<p>Please choose a profile to see relevant news.</p>";
-      return;
-    }
-
-    const filtered = filterNews(profile);
-
-    if (filtered.length === 0) {
-      container.innerHTML = "<p>No news found for this profile yet. Check back soon!</p>";
-      return;
-    }
-
-    filtered.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "news-card";
-      card.innerHTML = `
-        <h3><a href="${item.url}" target="_blank">${item.title}</a></h3>
-        <p>${item.summary}</p>
-        <p><strong>Business Impact:</strong> ${item.impact}</p>
-        <p><strong>Recommended Actions:</strong></p>
-        <ul>${item.actions.map(a => `<li>${a}</li>`).join("")}</ul>
-      `;
-      container.appendChild(card);
-    });
-  }
-
-  document.getElementById("profileSelect").addEventListener("change", function () {
-    showNews(this.value);
-  });
-
-// Initialize page
-showNews("");
-</script>
-
+<script src="assets/main.js"></script>
 </body>
 </html>
