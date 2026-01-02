@@ -1,14 +1,21 @@
-let briefsData = [];
+// GLOBAL – must exist before app.js uses it
+window.briefsData = [];
 
 fetch("/data/briefs.json")
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error("Failed to load briefs.json");
+    return res.json();
+  })
   .then(data => {
-    briefsData = data.map(b => ({
+    window.briefsData = data.map(b => ({
       ...b,
-      date: new Date(b.date),
-      url: `/brief.html?id=${b.id}`
+      date: new Date(b.date)
     }));
+
+    // now safe to call app logic
     updateTimeCounts();
     renderBriefsByTime();
   })
-  .catch(err => console.error("Failed to load briefs", err));
+  .catch(err => {
+    console.error("Briefs load error:", err);
+  });
