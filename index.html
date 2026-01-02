@@ -652,6 +652,7 @@
         <form class="newsletter-form" id="newsletter-form">
           <input type="email" placeholder="Enter your email" required>
           <button type="submit">Subscribe</button>
+          <p id="newsletter-msg" style="margin-top:10px;"></p>
         </form>
       </div>
     </section>
@@ -855,13 +856,15 @@
         });
       });
 
+     
       // Newsletter form
-      newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = e.target.querySelector('input[type="email"]').value;
-        showToast(`Subscribed with ${email}`);
-        e.target.reset();
-      });
+     // newsletterForm.addEventListener('submit', (e) => {
+       // e.preventDefault();
+       // const email = e.target.querySelector('input[type="email"]').value;
+      //  showToast(`Subscribed with ${email}`);
+        //e.target.reset();
+     // });
+      
     }
 
     // Render briefs
@@ -1052,5 +1055,6 @@ document.getElementById("newsletter-form").addEventListener("submit", async (e) 
   
 </body>
 </html>
+
 
 
