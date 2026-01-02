@@ -204,14 +204,45 @@ function renderSection(title, items, showNew = false) {
   </div>`;
 }
 
-function renderCard(b, showNew) {
+function renderCard(b, showNew = false) {
+  const formattedDate = b.date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  });
+
   return `
-  <div class="card">
-    <h3 class="card-title">${b.title}</h3>
-    <p>${b.summary}</p>
-    <a href="/brief.html?id=${b.id}" class="read-more">Read full brief</a>
+  <div class="card" data-brief-id="${b.id}">
+    
+    <div class="card-header">
+      <div>
+        <h3 class="card-title">${b.title}</h3>
+        <div class="card-meta">
+          <span class="meta-tag">${b.location}</span>
+          <span class="meta-tag">${b.category}</span>
+          <span class="meta-tag risk-${b.risk}">${b.risk} risk</span>
+          <span class="meta-tag">${formattedDate}</span>
+        </div>
+      </div>
+      <i class="fas ${b.icon} card-icon"></i>
+    </div>
+
+    <div class="card-content">
+      <p>${b.summary}</p>
+      <ul class="card-list">
+        ${b.points.map(p => `<li>${p}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="card-footer">
+      <a href="/brief.html?id=${b.id}" class="read-more">
+        Read full brief <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
   </div>`;
 }
+
 
 // --------------------
 // REACTIONS
