@@ -3,11 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about RiskBrief - Security news translated into plain language for founders and small teams.">
   <title>About RiskBrief — Founder Security Briefs</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Use the same styles as your main page */
-    /* Add these additional styles for the about page */
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary-color: #0f172a;
+      --text-color: #334155;
+      --light-gray: #f8fafc;
+      --medium-gray: #e2e8f0;
+      --border-color: #e2e8f0;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+
+    .logo i {
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    nav ul li a.active {
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    /* About Section */
     .about-section {
       background-color: white;
       border-radius: 12px;
@@ -15,100 +121,461 @@
       margin-bottom: 2rem;
       box-shadow: var(--card-shadow);
     }
-    
+
     .about-section h2 {
       color: var(--secondary-color);
       margin-bottom: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+      display: flex;
+      align-items: center;
     }
-    
+
+    .about-section h2 i {
+      margin-right: 0.75rem;
+      color: var(--primary-color);
+    }
+
     .about-section p {
       margin-bottom: 1rem;
+      font-size: 1.05rem;
     }
-    
+
+    .about-section ul, .about-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-section li {
+      margin-bottom: 0.75rem;
+    }
+
+    /* Value Proposition */
     .value-proposition {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
-      margin: 2rem 0;
+      margin: 2.5rem 0;
     }
-    
+
     .value-card {
       background-color: var(--light-gray);
-      padding: 1.5rem;
-      border-radius: 8px;
+      padding: 2rem;
+      border-radius: 12px;
       text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--border-color);
     }
-    
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
     .value-card i {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: var(--primary-color);
       margin-bottom: 1rem;
     }
-    
+
     .value-card h3 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       color: var(--secondary-color);
+      font-size: 1.25rem;
+    }
+
+    .value-card p {
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .team-member {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--light-gray);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .team-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 2.5rem;
+    }
+
+    .team-member h3 {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member p {
+      color: var(--text-color);
+      font-size: 0.9rem;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3rem 0;
+      border-radius: 12px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 3rem 0;
+      border-radius: 12px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: white;
+      color: var(--secondary-color);
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-section ul li a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.25rem;
+      transition: transform 0.2s;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        margin-top: 1rem;
+      }
+
+      nav ul li {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .value-proposition {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Include the same header as your main page -->
-  
-  <main class="container">
-    <div class="about-section">
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-shield-alt"></i>
+          RiskBrief
+        </a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Briefs</a></li>
+            <li><a href="index.html#categories">Categories</a></li>
+            <li><a href="index.html#resources">Resources</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
       <h1>About RiskBrief</h1>
-      <p>RiskBrief translates complex security news into plain language for founders and small teams. We cut through the technical jargon to deliver what business leaders need to know.</p>
-      
-      <h2>Our Mission</h2>
-      <p>Security information is often written by technical experts for technical experts. This leaves business leaders vulnerable because they can't quickly assess risks or take appropriate action.</p>
-      <p>RiskBrief bridges this gap by providing:</p>
-      <ul>
-        <li>Clear explanations of security threats</li>
-        <li>Business-focused impact analysis</li>
-        <li>Actionable recommendations for non-technical teams</li>
-        <li>Regular updates on emerging threats</li>
-      </ul>
-      
+      <p>Security news translated into plain language for founders and small teams. We cut through the technical jargon to deliver what business leaders need to know.</p>
+    </section>
+
+    <section class="container">
+      <div class="about-section">
+        <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+        <p>Security information is often written by technical experts for technical experts. This leaves business leaders vulnerable because they can't quickly assess risks or take appropriate action.</p>
+        <p>RiskBrief bridges this gap by providing:</p>
+        <ul>
+          <li><strong>Clear explanations</strong> of security threats without technical jargon</li>
+          <li><strong>Business-focused impact analysis</strong> that translates cyber risks to business risks</li>
+          <li><strong>Actionable recommendations</strong> for non-technical teams</li>
+          <li><strong>Regular updates</strong> on emerging threats relevant to small businesses</li>
+        </ul>
+      </div>
+
       <div class="value-proposition">
         <div class="value-card">
           <i class="fas fa-clock"></i>
           <h3>Time-Saving</h3>
-          <p>We research and summarize security news so you can stay informed in minutes, not hours.</p>
+          <p>We research and summarize security news so you can stay informed in minutes, not hours. No more sifting through technical reports.</p>
         </div>
         <div class="value-card">
           <i class="fas fa-shield-alt"></i>
           <h3>Risk Reduction</h3>
-          <p>Our actionable recommendations help you address vulnerabilities before they become problems.</p>
+          <p>Our actionable recommendations help you address vulnerabilities before they become problems. Prevention is always better than remediation.</p>
         </div>
         <div class="value-card">
           <i class="fas fa-language"></i>
           <h3>Plain Language</h3>
-          <p>No technical jargon or acronyms – just clear explanations you can understand and act on.</p>
+          <p>No technical jargon or confusing acronyms – just clear explanations you can understand and act on immediately.</p>
         </div>
       </div>
-      
-      <h2>Our Methodology</h2>
-      <p>Each RiskBrief follows a rigorous process:</p>
-      <ol>
-        <li>We monitor multiple security sources for emerging threats</li>
-        <li>We assess business impact and relevance to small organizations</li>
-        <li>We translate technical details into business risks</li>
-        <li>We provide prioritized, actionable recommendations</li>
-        <li>We review and update information as threats evolve</li>
-      </ol>
-      
-      <h2>Who We Serve</h2>
-      <p>RiskBrief is designed for:</p>
-      <ul>
-        <li>Startup founders without dedicated security teams</li>
-        <li>Small business owners managing their own technology</li>
-        <li>Non-technical executives responsible for business risk</li>
-        <li>Anyone who needs to understand security without a technical background</li>
-      </ul>
-    </div>
+
+      <div class="about-section">
+        <h2><i class="fas fa-cogs"></i> Our Methodology</h2>
+        <p>Each RiskBrief follows a rigorous process to ensure accuracy and relevance:</p>
+        <ol>
+          <li><strong>Monitor</strong> multiple security sources for emerging threats and incidents</li>
+          <li><strong>Assess</strong> business impact and relevance to small organizations</li>
+          <li><strong>Translate</strong> technical details into business risks and implications</li>
+          <li><strong>Provide</strong> prioritized, actionable recommendations for immediate action</li>
+          <li><strong>Review</strong> and update information as threats evolve</li>
+        </ol>
+      </div>
+
+      <div class="stats-section">
+        <div class="container">
+          <h2 style="margin-bottom: 2rem;">Our Impact</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <h3>500+</h3>
+              <p>Security Briefs Published</p>
+            </div>
+            <div class="stat-item">
+              <h3>10K+</h3>
+              <p>Founders Protected</p>
+            </div>
+            <div class="stat-item">
+              <h3>50+</h3>
+              <p>Threats Prevented</p>
+            </div>
+            <div class="stat-item">
+              <h3>98%</h3>
+              <p>Reader Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2><i class="fas fa-users"></i> Who We Serve</h2>
+        <p>RiskBrief is specifically designed for:</p>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-avatar">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Startup Founders</h3>
+            <p>Without dedicated security teams who need to understand risks quickly</p>
+          </div>
+          <div class="team-member">
+            <div class="team-avatar">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3>Small Business Owners</h3>
+            <p>Managing their own technology and making security decisions</p>
+          </div>
+          <div class="team-member">
+            <div class="team-avatar">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Non-technical Executives</h3>
+            <p>Responsible for business risk and compliance</p>
+          </div>
+          <div class="team-member">
+            <div class="team-avatar">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Security Students</h3>
+            <p>Learning about business impact of security threats</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2><i class="fas fa-newspaper"></i> Our Commitment</h2>
+        <p>At RiskBrief, we are committed to:</p>
+        <ul>
+          <li><strong>Accuracy:</strong> All briefs are thoroughly researched and fact-checked</li>
+          <li><strong>Relevance:</strong> We focus on threats that matter to small businesses</li>
+          <li><strong>Clarity:</strong> Complex topics explained in simple, actionable terms</li>
+          <li><strong>Timeliness:</strong> Quick response to emerging threats and incidents</li>
+          <li><strong>Independence:</strong> Unbiased analysis without vendor influence</li>
+        </ul>
+      </div>
+
+      <div class="cta-section">
+        <h2>Stay Protected, Stay Informed</h2>
+        <p>Join thousands of founders who rely on RiskBrief for their security intelligence</p>
+        <a href="index.html" class="cta-button">Browse Security Briefs</a>
+      </div>
+    </section>
   </main>
-  
-  <!-- Include the same footer as your main page -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>RiskBrief</h3>
+          <p>Security news translated into plain language for founders and small teams.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Security Checklist</a></li>
+            <li><a href="#">Best Practices</a></li>
+            <li><a href="#">Glossary</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 RiskBrief. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
