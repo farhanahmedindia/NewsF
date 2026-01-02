@@ -1,17 +1,18 @@
 [ 
   { 
-    id: "001", 
-    title: "Email phishing attacks increasing against Indian businesses", 
-    icon: "fa-envelope", 
-    category: "email", 
-    risk: "high", 
-    location: "India", 
-    date: today, summary: "Fake emails are being used to trick employees into clicking malicious links. A single click can allow attackers remote access.", 
-    points: [ 
+    "id": "001", 
+    "title": "Email phishing attacks increasing against Indian businesses", 
+    "icon": "fa-envelope", 
+    "category": "email", 
+    "risk": "high", 
+    "location": "India", 
+    "date": "2026-01-02", 
+    "summary": "Fake emails are being used to trick employees into clicking malicious links. A single click can allow attackers remote access.", 
+    "points": [ 
       "Most attacks start with email", 
       "Small teams are common targets", 
       "No technical skills required by attackers" 
     ], 
-    url: "briefs/001.html" 
+    "url": "briefs/001.html" 
   }
 ]
