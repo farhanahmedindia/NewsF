@@ -1,130 +1,104 @@
 [
-      {
-        id: "001",
-        title: "Email phishing attacks increasing against Indian businesses",
-        icon: "fa-envelope",
-        category: "email",
-        risk: "high",
-        location: "India",
-        date: today,
-        summary: "Fake emails are being used to trick employees into clicking malicious links. A single click can allow attackers remote access.",
-        points: [
-          "Most attacks start with email",
-          "Small teams are common targets",
-          "No technical skills required by attackers"
-        ],
-        url: "briefs/001.html"
-      },
-      {
-        id: "002",
-        title: "Data breach affects 50,000 customers of retail startup",
-        icon: "fa-database",
-        category: "data",
-        risk: "high",
-        location: "US",
-        date: yesterday,
-        summary: "Customer data including names, emails, and purchase histories were exposed due to unsecured database.",
-        points: [
-          "Database was not password protected",
-          "Data was accessible for over 2 weeks",
-          "No encryption on sensitive information"
-        ],
-        url: "briefs/002.html"
-      },
-      {
-        id: "003",
-        title: "Cloud misconfiguration leads to $200K in unexpected costs",
-        icon: "fa-cloud",
-        category: "cloud",
-        risk: "medium",
-        location: "Global",
-        date: threeDaysAgo,
-        summary: "A startup's cloud resources were compromised and used for cryptocurrency mining, resulting in massive bills.",
-        points: [
-          "Default cloud settings left unchanged",
-          "No spending alerts configured",
-          "Access keys were exposed in code repository"
-        ],
-        url: "briefs/003.html"
-      },
-      {
-        id: "004",
-        title: "Mobile app vulnerability exposes user locations",
-        icon: "fa-mobile-alt",
-        category: "mobile",
-        risk: "medium",
-        location: "Europe",
-        date: oneWeekAgo,
-        summary: "A popular fitness app had a security flaw that allowed attackers to track users' real-time locations.",
-        points: [
-          "API lacked proper authentication",
-          "Location data was transmitted unencrypted",
-          "No rate limiting on API requests"
-        ],
-        url: "briefs/004.html"
-      },
-      {
-        id: "005",
-        title: "Ransomware attack shuts down payment processing for 3 days",
-        icon: "fa-lock",
-        category: "network",
-        risk: "high",
-        location: "UK",
-        date: twoWeeksAgo,
-        summary: "A fintech startup's entire network was encrypted by ransomware, disrupting services and causing customer churn.",
-        points: [
-          "No network segmentation implemented",
-          "Backup systems were also infected",
-          "Employees lacked security awareness training"
-        ],
-        url: "briefs/005.html"
-      },
-      {
-        id: "006",
-        title: "Weak password policy leads to account takeovers",
-        icon: "fa-key",
-        category: "network",
-        risk: "medium",
-        location: "Global",
-        date: oneMonthAgo,
-        summary: "Multiple customer accounts were compromised due to weak password requirements and lack of MFA.",
-        points: [
-          "Passwords could be as short as 6 characters",
-          "No multi-factor authentication option",
-          "Password reuse across services was common"
-        ],
-        url: "briefs/006.html"
-      },
-      {
-        id: "007",
-        title: "Zero-day vulnerability in popular CMS platform",
-        icon: "fa-bug",
-        category: "network",
-        risk: "high",
-        location: "Global",
-        date: today,
-        summary: "A critical vulnerability in a widely used content management system allows attackers to execute remote code.",
-        points: [
-          "Affects over 1 million websites",
-          "No patch currently available",
-          "Attackers are actively exploiting this vulnerability"
-        ],
-        url: "briefs/007.html"
-      },
-      {
-        id: "008",
-        title: "Supply chain attack affects 100+ software companies",
-        icon: "fa-link",
-        category: "network",
-        risk: "high",
-        location: "Global",
-        date: twoMonthsAgo,
-        summary: "Compromised software development tool led to widespread distribution of malware to end users.",
-        points: [
-          "Popular code repository was compromised",
-          "Malicious code was injected into legitimate software updates",
-          "Attack went undetected for over a month"
-        ],
-        url: "briefs/008.html"
-      }
+  {
+    "id": "001",
+    "title": "Email phishing attacks increasing against Indian businesses",
+    "icon": "fa-envelope",
+    "category": "email",
+    "risk": "high",
+    "location": "India",
+    "date": "2026-01-02",
+    "summary": "Fake emails are being used to trick employees into clicking malicious links. A single click can allow attackers remote access.",
+    "points": [
+      "Most attacks start with email",
+      "Small teams are common targets",
+      "No technical skills required by attackers"
     ]
+  },
+  {
+    "id": "002",
+    "title": "Data breach affects 50,000 customers of retail startup",
+    "icon": "fa-database",
+    "category": "data",
+    "risk": "high",
+    "location": "US",
+    "date": "2026-01-01",
+    "summary": "Customer data including names, emails, and purchase histories were exposed due to unsecured database.",
+    "points": [
+      "Database was not password protected",
+      "Data was accessible for over 2 weeks",
+      "No encryption on sensitive information"
+    ]
+  },
+  {
+    "id": "003",
+    "title": "Cloud misconfiguration leads to $200K in unexpected costs",
+    "icon": "fa-cloud",
+    "category": "cloud",
+    "risk": "medium",
+    "location": "Global",
+    "date": "2025-12-30",
+    "summary": "A startup's cloud resources were compromised and used for cryptocurrency mining, resulting in massive bills.",
+    "points": [
+      "Default cloud settings left unchanged",
+      "No spending alerts configured",
+      "Access keys were exposed in code repository"
+    ]
+  },
+  {
+    "id": "004",
+    "title": "Mobile app vulnerability exposes user locations",
+    "icon": "fa-mobile-alt",
+    "category": "mobile",
+    "risk": "medium",
+    "location": "Europe",
+    "date": "2025-12-26",
+    "summary": "A popular fitness app had a security flaw that allowed attackers to track users' real-time locations.",
+    "points": [
+      "API lacked proper authentication",
+      "Location data was transmitted unencrypted",
+      "No rate limiting on API requests"
+    ]
+  },
+  {
+    "id": "005",
+    "title": "Ransomware attack shuts down payment processing for 3 days",
+    "icon": "fa-lock",
+    "category": "network",
+    "risk": "high",
+    "location": "UK",
+    "date": "2025-12-19",
+    "summary": "A fintech startup's entire network was encrypted by ransomware, disrupting services and causing customer churn.",
+    "points": [
+      "No network segmentation implemented",
+      "Backup systems were also infected",
+      "Employees lacked security awareness training"
+    ]
+  },
+  {
+    "id": "006",
+    "title": "Weak password policy leads to account takeovers",
+    "icon": "fa-key",
+    "category": "network",
+    "risk": "medium",
+    "location": "Global",
+    "date": "2025-12-03",
+    "summary": "Multiple customer accounts were compromised due to weak password requirements and lack of MFA.",
+    "points": [
+      "Passwords could be as short as 6 characters",
+      "No multi-factor authentication option",
+      "Password reuse across services was common"
+    ]
+  },
+  {
+    "id": "007",
+    "title": "Zero-day vulnerability in popular CMS platform",
+    "icon": "fa-bug",
+    "category": "network",
+    "risk": "high",
+    "location": "Global",
+    "date": "2026-01-02",
+    "summary": "A critical vulnerability in a widely used content management system allows attackers to execute remote code.",
+    "points": [
+      "Affects over 1 million websites",
+      "No patch currently available",
+      "Attackers are actively exploiting this vulnerabili
