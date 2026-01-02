@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Security news translated into plain language for founders and small teams.">
+  <title>RiskBrief — Founder Security Briefs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary-color: #0f172a;
+      --text-color: #334155;
+      --light-gray: #f8fafc;
+      --medium-gray: #e2e8f0;
+      --border-color: #e2e8f0;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+
+    .logo i {
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Time Navigation */
+    .time-nav {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .time-nav-item {
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      color: var(--text-color);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .time-nav-item:hover {
+      color: var(--primary-color);
+    }
+
+    .time-nav-item.active {
+      color: var(--primary-color);
+      border-bottom-color: var(--primary-color);
+    }
+
+    .time-nav-item .count {
+      background-color: var(--medium-gray);
+      color: var(--text-color);
+      font-size: 0.75rem;
+      padding: 0.125rem 0.5rem;
+      border-radius: 10px;
+      margin-left: 0.5rem;
+    }
+
+    .time-nav-item.active .count {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Filter Section */
+    .filter-section {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .filter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .filter-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .filter-toggle {
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      cursor: pointer;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+
+    .filter-toggle i {
+      margin-left: 0.5rem;
+      transition: transform 0.3s;
+    }
+
+    .filter-toggle.active i {
+      transform: rotate(180deg);
+    }
+
+    .filter-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .filter-option {
+      display: flex;
+      align-items: center;
+    }
+
+    .filter-option input {
+      margin-right: 0.5rem;
+    }
+
+    .search-box {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 3rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-color);
+    }
+
+    /* Brief Sections */
+    .brief-section {
+      margin-bottom: 3rem;
+    }
+
+    .brief-section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .brief-section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-right: 1rem;
+    }
+
+    .brief-section-date {
+      font-size: 0.875rem;
+      color: var(--text-color);
+      background-color: var(--medium-gray);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+
+    .brief-section-count {
+      margin-left: auto;
+      font-size: 0.875rem;
+      color: var(--text-color);
+    }
+
+    /* Brief Cards */
+    .briefs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .card-icon {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta-tag {
+      background-color: var(--medium-gray);
+      color: var(--text-color);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .risk-high {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--danger-color);
+    }
+
+    .risk-medium {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: var(--warning-color);
+    }
+
+    .risk-low {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: var(--success-color);
+    }
+
+    .new-badge {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 0.625rem;
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .card-content {
+      flex-grow: 1;
+    }
+
+    .card-content p {
+      margin-bottom: 1rem;
+    }
+
+    .card-list {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .read-more {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .read-more:hover {
+      color: var(--primary-dark);
+    }
+
+    .read-more i {
+      margin-left: 0.5rem;
+      transition: transform 0.2s;
+    }
+
+    .read-more:hover i {
+      transform: translateX(3px);
+    }
+
+    .reactions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .reaction {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .reaction:hover {
+      background-color: var(--light-gray);
+    }
+
+    .reaction i {
+      margin-right: 0.25rem;
+    }
+
+    .reaction.active {
+      color: var(--primary-color);
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3rem 0;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter p {
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex-grow: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 1rem;
+    }
+
+    .newsletter-form button {
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0 4px 4px 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .newsletter-form button:hover {
+      background-color: #1e293b;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 2rem 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-section ul li a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.25rem;
+      transition: transform 0.2s;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        margin-top: 1rem;
+      }
+
+      nav ul li {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .time-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .briefs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input {
+        border-radius: 4px 4px 0 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .newsletter-form button {
+        border-radius: 0 0 4px 4px;
+      }
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: var(--card-hover-shadow);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Loading State */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid var(--medium-gray);
+      border-top: 4px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .empty-state i {
+      font-size: 3rem;
+      color: var(--medium-gray);
+      margin-bottom: 1rem;
+    }
+
+    .empty-state h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+    }
+
+    .empty-state p {
+      color: var(--text-color);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">
+          <i class="fas fa-shield-alt"></i>
+          RiskBrief
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#briefs">Briefs</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h1>Founder Security Briefs</h1>
+      <p>Security news translated into plain language for founders and small teams. Stay informed without the technical jargon.</p>
+    </section>
+
+    <section class="container">
+      <!-- Time Navigation -->
+      <div class="time-nav" id="time-nav">
+        <a class="time-nav-item active" data-period="all">
+          All Briefs <span class="count" id="count-all">0</span>
+        </a>
+        <a class="time-nav-item" data-period="today">
+          Today <span class="count" id="count-today">0</span>
+        </a>
+        <a class="time-nav-item" data-period="week">
+          This Week <span class="count" id="count-week">0</span>
+        </a>
+        <a class="time-nav-item" data-period="month">
+          This Month <span class="count" id="count-month">0</span>
+        </a>
+        <a class="time-nav-item" data-period="older">
+          Older <span class="count" id="count-older">0</span>
+        </a>
+      </div>
+
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Search security briefs...">
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-header">
+          <h3 class="filter-title">Filter by Category</h3>
+          <button class="filter-toggle" id="filter-toggle">
+            <span>Show Filters</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <div class="filter-options" id="filter-options" style="display: none;">
+          <div class="filter-option">
+            <input type="checkbox" id="filter-email" value="email">
+            <label for="filter-email">Email</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-data" value="data">
+            <label for="filter-data">Data</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-cloud" value="cloud">
+            <label for="filter-cloud">Cloud</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-mobile" value="mobile">
+            <label for="filter-mobile">Mobile</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-network" value="network">
+            <label for="filter-network">Network</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-high" value="high">
+            <label for="filter-high">High Risk</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Briefs will be dynamically inserted here -->
+      <div id="briefs-container">
+        <!-- Brief sections will be dynamically inserted here -->
+      </div>
+
+      <div class="loading" id="loading" style="display: none;">
+        <div class="spinner"></div>
+      </div>
+
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <i class="fas fa-inbox"></i>
+        <h3>No briefs found</h3>
+        <p>Try adjusting your filters or search terms.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="newsletter">
+        <h2>Stay Ahead of Security Threats</h2>
+        <p>Get weekly security briefs delivered to your inbox. No technical jargon, just actionable insights.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+          <p id="newsletter-msg" style="margin-top:10px;"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>RiskBrief</h3>
+          <p>Security news translated into plain language for founders and small teams.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Security Checklist</a></li>
+            <li><a href="#">Best Practices</a></li>
+            <li><a href="#">Glossary</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 RiskBrief. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Sample data for security briefs with actual dates
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const threeDaysAgo = new Date(today);
+    threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
+    const oneWeekAgo = new Date(today);
+    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+    const twoWeeksAgo = new Date(today);
+    twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
+    const oneMonthAgo = new Date(today);
+    oneMonthAgo.setDate(oneMonthAgo.getDate() - 30);
+    const twoMonthsAgo = new Date(today);
+    twoMonthsAgo.setDate(twoMonthsAgo.getDate() - 60);
+
+    const briefsData = [
+      {
+        id: "001",
+        title: "Email phishing attacks increasing against Indian businesses",
+        icon: "fa-envelope",
+        category: "email",
+        risk: "high",
+        location: "India",
+        date: today,
+        summary: "Fake emails are being used to trick employees into clicking malicious links. A single click can allow attackers remote access.",
+        points: [
+          "Most attacks start with email",
+          "Small teams are common targets",
+          "No technical skills required by attackers"
+        ],
+        url: "briefs/001.html"
+      },
+      {
+        id: "002",
+        title: "Data breach affects 50,000 customers of retail startup",
+        icon: "fa-database",
+        category: "data",
+        risk: "high",
+        location: "US",
+        date: yesterday,
+        summary: "Customer data including names, emails, and purchase histories were exposed due to unsecured database.",
+        points: [
+          "Database was not password protected",
+          "Data was accessible for over 2 weeks",
+          "No encryption on sensitive information"
+        ],
+        url: "briefs/002.html"
+      },
+      {
+        id: "003",
+        title: "Cloud misconfiguration leads to $200K in unexpected costs",
+        icon: "fa-cloud",
+        category: "cloud",
+        risk: "medium",
+        location: "Global",
+        date: threeDaysAgo,
+        summary: "A startup's cloud resources were compromised and used for cryptocurrency mining, resulting in massive bills.",
+        points: [
+          "Default cloud settings left unchanged",
+          "No spending alerts configured",
+          "Access keys were exposed in code repository"
+        ],
+        url: "briefs/003.html"
+      },
+      {
+        id: "004",
+        title: "Mobile app vulnerability exposes user locations",
+        icon: "fa-mobile-alt",
+        category: "mobile",
+        risk: "medium",
+        location: "Europe",
+        date: oneWeekAgo,
+        summary: "A popular fitness app had a security flaw that allowed attackers to track users' real-time locations.",
+        points: [
+          "API lacked proper authentication",
+          "Location data was transmitted unencrypted",
+          "No rate limiting on API requests"
+        ],
+        url: "briefs/004.html"
+      },
+      {
+        id: "005",
+        title: "Ransomware attack shuts down payment processing for 3 days",
+        icon: "fa-lock",
+        category: "network",
+        risk: "high",
+        location: "UK",
+        date: twoWeeksAgo,
+        summary: "A fintech startup's entire network was encrypted by ransomware, disrupting services and causing customer churn.",
+        points: [
+          "No network segmentation implemented",
+          "Backup systems were also infected",
+          "Employees lacked security awareness training"
+        ],
+        url: "briefs/005.html"
+      },
+      {
+        id: "006",
+        title: "Weak password policy leads to account takeovers",
+        icon: "fa-key",
+        category: "network",
+        risk: "medium",
+        location: "Global",
+        date: oneMonthAgo,
+        summary: "Multiple customer accounts were compromised due to weak password requirements and lack of MFA.",
+        points: [
+          "Passwords could be as short as 6 characters",
+          "No multi-factor authentication option",
+          "Password reuse across services was common"
+        ],
+        url: "briefs/006.html"
+      },
+      {
+        id: "007",
+        title: "Zero-day vulnerability in popular CMS platform",
+        icon: "fa-bug",
+        category: "network",
+        risk: "high",
+        location: "Global",
+        date: today,
+        summary: "A critical vulnerability in a widely used content management system allows attackers to execute remote code.",
+        points: [
+          "Affects over 1 million websites",
+          "No patch currently available",
+          "Attackers are actively exploiting this vulnerability"
+        ],
+        url: "briefs/007.html"
+      },
+      {
+        id: "008",
+        title: "Supply chain attack affects 100+ software companies",
+        icon: "fa-link",
+        category: "network",
+        risk: "high",
+        location: "Global",
+        date: twoMonthsAgo,
+        summary: "Compromised software development tool led to widespread distribution of malware to end users.",
+        points: [
+          "Popular code repository was compromised",
+          "Malicious code was injected into legitimate software updates",
+          "Attack went undetected for over a month"
+        ],
+        url: "briefs/008.html"
+      }
+    ];
+
+    // DOM elements
+    const briefsContainer = document.getElementById('briefs-container');
+    const searchInput = document.getElementById('search-input');
+    const filterToggle = document.getElementById('filter-toggle');
+    const filterOptions = document.getElementById('filter-options');
+    const loading = document.getElementById('loading');
+    const emptyState = document.getElementById('empty-state');
+    const newsletterForm = document.getElementById('newsletter-form');
+    const toast = document.getElementById('toast');
+    const timeNavItems = document.querySelectorAll('.time-nav-item');
+
+    // State
+    let activeFilters = {
+      categories: [],
+      risk: null,
+      search: '',
+      timePeriod: 'all'
+    };
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', () => {
+      updateTimeCounts();
+      renderBriefsByTime();
+      setupEventListeners();
+      loadSavedReactions();
+    });
+
+    // Update time period counts
+    function updateTimeCounts() {
+      const counts = {
+        all: briefsData.length,
+        today: 0,
+        week: 0,
+        month: 0,
+        older: 0
+      };
+
+      briefsData.forEach(brief => {
+        const daysDiff = Math.floor((today - brief.date) / (1000 * 60 * 60 * 24));
+        
+        if (daysDiff === 0) {
+          counts.today++;
+          counts.week++;
+          counts.month++;
+        } else if (daysDiff <= 7) {
+          counts.week++;
+          counts.month++;
+        } else if (daysDiff <= 30) {
+          counts.month++;
+        } else {
+          counts.older++;
+        }
+      });
+
+      document.getElementById('count-all').textContent = counts.all;
+      document.getElementById('count-today').textContent = counts.today;
+      document.getElementById('count-week').textContent = counts.week;
+      document.getElementById('count-month').textContent = counts.month;
+      document.getElementById('count-older').textContent = counts.older;
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+      // Search functionality
+      searchInput.addEventListener('input', (e) => {
+        activeFilters.search = e.target.value.toLowerCase();
+        renderBriefsByTime();
+      });
+
+      // Filter toggle
+      filterToggle.addEventListener('click', () => {
+        filterOptions.style.display = filterOptions.style.display === 'none' ? 'flex' : 'none';
+        filterToggle.classList.toggle('active');
+      });
+
+      // Category filters
+      document.querySelectorAll('.filter-option input').forEach(checkbox => {
+        checkbox.addEventListener('change', (e) => {
+          const value = e.target.value;
+          
+          if (value === 'high') {
+            activeFilters.risk = e.target.checked ? 'high' : null;
+          } else {
+            if (e.target.checked) {
+              activeFilters.categories.push(value);
+            } else {
+              activeFilters.categories = activeFilters.categories.filter(cat => cat !== value);
+            }
+          }
+          
+          renderBriefsByTime();
+        });
+      });
+
+      // Time navigation
+      timeNavItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Update active state
+          timeNavItems.forEach(navItem => navItem.classList.remove('active'));
+          item.classList.add('active');
+          
+          // Update filter
+          activeFilters.timePeriod = item.dataset.period;
+          
+          // Re-render briefs
+          renderBriefsByTime();
+        });
+      });
+    }
+
+    // Group briefs by time period
+    function groupBriefsByTime(briefs) {
+      const grouped = {
+        today: [],
+        week: [],
+        month: [],
+        older: []
+      };
+
+      briefs.forEach(brief => {
+        const daysDiff = Math.floor((today - brief.date) / (1000 * 60 * 60 * 24));
+        
+        if (daysDiff === 0) {
+          grouped.today.push(brief);
+        } else if (daysDiff <= 7) {
+          grouped.week.push(brief);
+        } else if (daysDiff <= 30) {
+          grouped.month.push(brief);
+        } else {
+          grouped.older.push(brief);
+        }
+      });
+
+      return grouped;
+    }
+
+    // Render briefs by time period
+    function renderBriefsByTime() {
+      // Show loading state
+      briefsContainer.style.display = 'none';
+      emptyState.style.display = 'none';
+      loading.style.display = 'flex';
+
+      // Simulate loading delay
+      setTimeout(() => {
+        loading.style.display = 'none';
+
+        // Filter briefs
+        let filteredBriefs = briefsData;
+
+        // Filter by search term
+        if (activeFilters.search) {
+          filteredBriefs = filteredBriefs.filter(brief => 
+            brief.title.toLowerCase().includes(activeFilters.search) ||
+            brief.summary.toLowerCase().includes(activeFilters.search) ||
+            brief.location.toLowerCase().includes(activeFilters.search) ||
+            brief.category.toLowerCase().includes(activeFilters.search)
+          );
+        }
+
+        // Filter by categories
+        if (activeFilters.categories.length > 0) {
+          filteredBriefs = filteredBriefs.filter(brief => 
+            activeFilters.categories.includes(brief.category)
+          );
+        }
+
+        // Filter by risk level
+        if (activeFilters.risk) {
+          filteredBriefs = filteredBriefs.filter(brief => 
+            brief.risk === activeFilters.risk
+          );
+        }
+
+        // Check if any briefs match filters
+        if (filteredBriefs.length === 0) {
+          briefsContainer.style.display = 'none';
+          emptyState.style.display = 'block';
+          return;
+        }
+
+        briefsContainer.style.display = 'block';
+        emptyState.style.display = 'none';
+
+        // Group by time period
+        const groupedBriefs = groupBriefsByTime(filteredBriefs);
+
+        // Render based on selected time period
+        let html = '';
+
+        if (activeFilters.timePeriod === 'all') {
+          // Render all sections
+          if (groupedBriefs.today.length > 0) {
+            html += renderBriefSection('Today', groupedBriefs.today, true);
+          }
+          if (groupedBriefs.week.length > 0) {
+            html += renderBriefSection('This Week', groupedBriefs.week);
+          }
+          if (groupedBriefs.month.length > 0) {
+            html += renderBriefSection('This Month', groupedBriefs.month);
+          }
+          if (groupedBriefs.older.length > 0) {
+            html += renderBriefSection('Older', groupedBriefs.older);
+          }
+        } else {
+          // Render only the selected section
+          let sectionTitle = '';
+          let showNewBadge = false;
+          
+          switch (activeFilters.timePeriod) {
+            case 'today':
+              sectionTitle = 'Today';
+              showNewBadge = true;
+              html += renderBriefSection(sectionTitle, groupedBriefs.today, showNewBadge);
+              break;
+            case 'week':
+              sectionTitle = 'This Week';
+              html += renderBriefSection(sectionTitle, groupedBriefs.week);
+              break;
+            case 'month':
+              sectionTitle = 'This Month';
+              html += renderBriefSection(sectionTitle, groupedBriefs.month);
+              break;
+            case 'older':
+              sectionTitle = 'Older';
+              html += renderBriefSection(sectionTitle, groupedBriefs.older);
+              break;
+          }
+        }
+
+        briefsContainer.innerHTML = html;
+        
+        // Re-attach event listeners for reactions
+        document.querySelectorAll('.reaction').forEach(btn => {
+          const briefId = btn.closest('.reactions').dataset.briefId;
+          const reactionType = btn.dataset.reaction;
+          const key = `reaction_${briefId}_${reactionType}`;
+
+          if (localStorage.getItem(key)) {
+            btn.classList.add('active');
+          }
+        });
+      }, 300);
+    }
+
+    // Render a brief section
+    function renderBriefSection(title, briefs, showNewBadge = false) {
+      if (briefs.length === 0) return '';
+
+      const sectionDate = title === 'Today' ? 'Latest Security Threats' : 
+                         title === 'This Week' ? 'From the Past Week' :
+                         title === 'This Month' ? 'From the Past Month' : 'From Previous Months';
+
+      return `
+        <div class="brief-section">
+          <div class="brief-section-header">
+            <h2 class="brief-section-title">${title}</h2>
+            <span class="brief-section-date">${sectionDate}</span>
+            <span class="brief-section-count">${briefs.length} brief${briefs.length !== 1 ? 's' : ''}</span>
+          </div>
+          <div class="briefs-grid">
+            ${briefs.map(brief => renderBriefCard(brief, showNewBadge)).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // Render a brief card
+    function renderBriefCard(brief, showNewBadge = false) {
+      const isNew = showNewBadge && Math.floor((today - brief.date) / (1000 * 60 * 60 * 24)) === 0;
+      const formattedDate = brief.date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric', 
+        year: 'numeric' 
+      });
+
+      return `
+        <div class="card" data-brief-id="${brief.id}">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">${brief.title}</h2>
+              <div class="card-meta">
+                <span class="meta-tag">${brief.location}</span>
+                <span class="meta-tag">${brief.category}</span>
+                <span class="meta-tag risk-${brief.risk}">${brief.risk} risk</span>
+                <span class="meta-tag">${formattedDate}</span>
+                ${isNew ? '<span class="new-badge">New</span>' : ''}
+              </div>
+            </div>
+            <i class="fas ${brief.icon} card-icon"></i>
+          </div>
+          <div class="card-content">
+            <p>${brief.summary}</p>
+            <ul class="card-list">
+              ${brief.points.map(point => `<li>${point}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="card-footer">
+            <a class="read-more" href="${brief.url}" onclick="trackFullRead('${brief.id}')">
+              Read full brief <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="reactions" data-brief-id="${brief.id}">
+              <button class="reaction" data-reaction="useful" onclick="toggleReaction('${brief.id}', 'useful')">
+                <i class="fas fa-thumbs-up"></i> Useful
+              </button>
+              <button class="reaction" data-reaction="clear" onclick="toggleReaction('${brief.id}', 'clear')">
+                <i class="fas fa-lightbulb"></i> Clear
+              </button>
+              <button class="reaction" data-reaction="concern" onclick="toggleReaction('${brief.id}', 'concern')">
+                <i class="fas fa-exclamation-triangle"></i> Concerning
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Track full brief read
+    function trackFullRead(id) {
+      console.log("Full brief opened:", id);
+      // In a real app, this would send analytics data
+    }
+
+    // Toggle reaction
+    function toggleReaction(briefId, reactionType) {
+      const key = `reaction_${briefId}_${reactionType}`;
+      const reactionBtn = document.querySelector(`.reactions[data-brief-id="${briefId}"] .reaction[data-reaction="${reactionType}"]`);
+      
+      if (localStorage.getItem(key)) {
+        // Remove reaction
+        localStorage.removeItem(key);
+        reactionBtn.classList.remove('active');
+      } else {
+        // Add reaction
+        localStorage.setItem(key, "true");
+        reactionBtn.classList.add('active');
+        
+        // Remove other reactions for this brief
+        document.querySelectorAll(`.reactions[data-brief-id="${briefId}"] .reaction`).forEach(btn => {
+          if (btn.dataset.reaction !== reactionType) {
+            const otherKey = `reaction_${briefId}_${btn.dataset.reaction}`;
+            localStorage.removeItem(otherKey);
+            btn.classList.remove('active');
+          }
+        });
+      }
+      
+      console.log("Reaction toggled:", briefId, reactionType);
+    }
+
+    // Load saved reactions
+    function loadSavedReactions() {
+      document.querySelectorAll(".reaction").forEach(btn => {
+        const briefId = btn.closest('.reactions').dataset.briefId;
+        const reactionType = btn.dataset.reaction;
+        const key = `reaction_${briefId}_${reactionType}`;
+
+        if (localStorage.getItem(key)) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    // Show toast notification
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+
+  <script>
+    document.getElementById("newsletter-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = e.target.querySelector("input").value;
+      const msg = document.getElementById("newsletter-msg");
+
+      msg.textContent = "Subscribing...";
+
+      try {
+        const res = await fetch(
+          "https://riskbrief-newsletter.farhanahmed2794.workers.dev/",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: email,
+              source: "homepage"
+            })
+          }
+        );
+
+        const data = await res.json();
+        msg.textContent = data.message;
+        msg.style.color = "green";
+        e.target.reset();
+
+      } catch (err) {
+        console.error(err);
+        msg.textContent = "Subscription failed (check console)";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
