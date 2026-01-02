@@ -1,0 +1,39 @@
+{
+  "id": "001",
+  "title": "Email phishing attacks increasing against Indian businesses",
+  "location": "India",
+  "risk": "high",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "Email-based phishing attacks are increasing...",
+    "This matters to founders..."
+  ],
+
+  "what_happened": [
+    "Attackers send emails...",
+    "Fake login pages steal credentials"
+  ],
+
+  "who_is_affected": [
+    "Small businesses",
+    "Teams without MFA"
+  ],
+
+  "attack_flow": [
+    "Email sent",
+    "Link clicked",
+    "Credentials stolen"
+  ],
+
+  "business_impact": [
+    "Account takeover",
+    "Financial loss"
+  ],
+
+  "actions": {
+    "immediate": ["Enable MFA", "Reset passwords"],
+    "short_term": ["Email filtering"],
+    "long_term": ["Training"]
+  }
+}
