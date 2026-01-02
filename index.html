@@ -655,6 +655,7 @@
         </form>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -1011,5 +1012,44 @@
       }, 3000);
     }
   </script>
+
+<script>
+document.getElementById("newsletter-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = e.target.querySelector("input").value;
+  const msg = document.getElementById("newsletter-msg");
+
+  msg.textContent = "Subscribing...";
+
+  try {
+    const res = await fetch(
+      "https://riskbrief-newsletter.username.workers.dev",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          source: "homepage"
+        })
+      }
+    );
+
+    const data = await res.json();
+    msg.textContent = data.message;
+    msg.style.color = "green";
+    e.target.reset();
+
+  } catch {
+    msg.textContent = "Something went wrong";
+    msg.style.color = "red";
+  }
+});
+</script>
+
+
+
+  
 </body>
 </html>
+
