@@ -2,38 +2,67 @@
   "id": "001",
   "title": "Email phishing attacks increasing against Indian businesses",
   "location": "India",
+  "category": "Email",
   "risk": "high",
   "date": "January 2026",
 
   "executive_summary": [
-    "Email-based phishing attacks are increasing...",
-    "This matters to founders..."
+    "Phishing emails are increasing across Indian businesses.",
+    "One click can compromise entire email systems."
   ],
 
   "what_happened": [
-    "Attackers send emails...",
-    "Fake login pages steal credentials"
+    "Attackers sent fake emails posing as trusted entities.",
+    "Victims entered credentials on fake pages."
   ],
 
   "who_is_affected": [
     "Small businesses",
-    "Teams without MFA"
+    "Teams without MFA",
+    "Finance and ecommerce companies"
   ],
 
   "attack_flow": [
     "Email sent",
-    "Link clicked",
+    "User clicks link",
+    "Fake login page",
     "Credentials stolen"
   ],
 
   "business_impact": [
     "Account takeover",
-    "Financial loss"
+    "Financial fraud",
+    "Reputation damage"
   ],
 
-  "actions": {
+  "risk_reason": "Email attacks rely on human behavior and are hard to stop without MFA.",
+
+  "what_usually_goes_wrong": [
+    "MFA not enabled",
+    "Employees not trained",
+    "Weak passwords"
+  ],
+
+  "recommended_actions": {
     "immediate": ["Enable MFA", "Reset passwords"],
-    "short_term": ["Email filtering"],
-    "long_term": ["Training"]
-  }
+    "short_term": ["Improve email filtering"],
+    "long_term": ["Security awareness training"]
+  },
+
+  "what_this_does_not_mean": [
+    "You are already breached",
+    "You are specifically targeted"
+  ],
+
+  "monitoring": {
+    "signs": ["Suspicious emails", "Unexpected login alerts"],
+    "alerts": ["New device login", "Email forwarding rule added"]
+  },
+
+  "sources": [
+    {
+      "title": "The Hacker News",
+      "url": "https://thehackernews.com/"
+    }
+  ]
 }
