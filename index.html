@@ -1043,10 +1043,12 @@ document.getElementById("newsletter-form").addEventListener("submit", async (e) 
     msg.style.color = "green";
     e.target.reset();
 
-  } catch {
-    msg.textContent = "Something went wrong";
-    msg.style.color = "red";
-  }
+ } catch (err) {
+  console.error(err);
+  msg.textContent = "Subscription failed (check console)";
+  msg.style.color = "red";
+}
+
 });
 </script>
 
@@ -1055,6 +1057,7 @@ document.getElementById("newsletter-form").addEventListener("submit", async (e) 
   
 </body>
 </html>
+
 
 
 
