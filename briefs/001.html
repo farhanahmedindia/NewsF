@@ -1,52 +1,708 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Email phishing risk — RiskBrief</title>
-  <link rel="stylesheet" href="../assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Email phishing attacks against Indian businesses - Full Security Brief">
+  <title>Email Phishing Risk — RiskBrief</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary-color: #0f172a;
+      --text-color: #334155;
+      --light-gray: #f8fafc;
+      --medium-gray: #e2e8f0;
+      --border-color: #e2e8f0;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+
+    .logo i {
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .back-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .back-link i {
+      margin-right: 0.5rem;
+    }
+
+    /* Brief Content */
+    .brief-content {
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: var(--card-shadow);
+    }
+
+    .brief-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brief-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    .brief-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta-tag {
+      background-color: var(--medium-gray);
+      color: var(--text-color);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .risk-high {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--danger-color);
+    }
+
+    .risk-medium {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: var(--warning-color);
+    }
+
+    .risk-low {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: var(--success-color);
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title i {
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .section-content {
+      margin-left: 2rem;
+    }
+
+    .section-content p {
+      margin-bottom: 1rem;
+    }
+
+    .section-content ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Action Tiers */
+    .action-tier {
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid;
+    }
+
+    .tier-immediate {
+      border-color: var(--danger-color);
+    }
+
+    .tier-short-term {
+      border-color: var(--warning-color);
+    }
+
+    .tier-long-term {
+      border-color: var(--success-color);
+    }
+
+    .tier-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .tier-title i {
+      margin-right: 0.5rem;
+    }
+
+    /* Risk Assessment */
+    .risk-assessment {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .risk-badge {
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .risk-badge.high {
+      background-color: var(--danger-color);
+    }
+
+    .risk-badge.medium {
+      background-color: var(--warning-color);
+    }
+
+    .risk-badge.low {
+      background-color: var(--success-color);
+    }
+
+    /* Source Section */
+    .source-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .source-link:hover {
+      text-decoration: underline;
+    }
+
+    .source-link i {
+      margin-left: 0.5rem;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--text-color);
+      margin-top: 2rem;
+    }
+
+    /* Reactions */
+    .reactions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .reaction {
+      background: none;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      transition: all 0.2s;
+    }
+
+    .reaction:hover {
+      background-color: var(--light-gray);
+    }
+
+    .reaction.active {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .reaction i {
+      margin-right: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-section ul li a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .brief-title {
+        font-size: 1.5rem;
+      }
+
+      .section-content {
+        margin-left: 1rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-shield-alt"></i>
+          RiskBrief
+        </a>
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i>
+          Back to Briefs
+        </a>
+      </div>
+    </div>
+  </header>
 
-<div class="container">
+  <main class="container">
+    <div class="brief-content">
+      <div class="brief-header">
+        <h1 class="brief-title">Email phishing attacks increasing against Indian businesses</h1>
+        <div class="brief-meta">
+          <span class="meta-tag">India</span>
+          <span class="meta-tag">Email risk</span>
+          <span class="meta-tag risk-high">High Risk</span>
+          <span class="meta-tag">January 2023</span>
+        </div>
+      </div>
 
-  <h1>Email phishing attacks against Indian businesses</h1>
+      <!-- Executive Summary -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-file-alt"></i>
+          Executive Summary
+        </h2>
+        <div class="section-content">
+          <p>Email-based phishing attacks are targeting Indian users with increasing frequency. Businesses relying on email without multi-factor authentication (MFA) face higher risk of account compromise, data theft, and financial loss.</p>
+          <p>This matters to any business that uses email for communication, especially small to medium-sized companies that may lack dedicated security teams.</p>
+        </div>
+      </section>
 
-  <p><strong>Who this matters to:</strong>  
-  Businesses in India that rely on email.</p>
+      <!-- What Actually Happened -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-info-circle"></i>
+          What Actually Happened
+        </h2>
+        <div class="section-content">
+          <p>Attackers are sending sophisticated phishing emails that appear to be from legitimate sources. These emails contain malicious links or attachments that, when clicked, install malware or redirect users to fake login pages designed to steal credentials.</p>
+          <p>The attacks primarily target businesses in India across various industries, with a focus on companies that handle financial transactions or sensitive customer data.</p>
+        </div>
+      </section>
 
-  <h2>What happened</h2>
-  <p>
-    Attackers sent emails that looked legitimate.
-    When clicked, they gained remote access to systems.
-  </p>
+      <!-- Who Is Most Affected -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-users"></i>
+          Who Is Most Affected
+        </h2>
+        <div class="section-content">
+          <p>This affects companies that:</p>
+          <ul>
+            <li>Use email heavily for business communication</li>
+            <li>Allow file downloads from email without strict filtering</li>
+            <li>Don't enforce multi-factor authentication (MFA)</li>
+            <li>Have limited IT security resources</li>
+            <li>Operate in finance, e-commerce, or technology sectors</li>
+          </ul>
+        </div>
+      </section>
 
-  <h2>Why this matters</h2>
-  <p>
-    Email-based attacks are cheap, effective,
-    and often go unnoticed until damage is done.
-  </p>
+      <!-- Attack Flow -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-sitemap"></i>
+          Attack Flow
+        </h2>
+        <div class="section-content">
+          <ol>
+            <li>Attacker researches target company and employees</li>
+            <li>User receives a fake email appearing to be from a trusted source</li>
+            <li>Email contains urgent request or enticing offer with link/attachment</li>
+            <li>User clicks link or downloads attachment</li>
+            <li>Malware installs silently or credentials are entered on fake page</li>
+            <li>Attacker gains access to email account and potentially other systems</li>
+            <li>Attacker uses access for data theft, financial fraud, or further attacks</li>
+          </ol>
+        </div>
+      </section>
 
-  <h2>What usually fails</h2>
-  <ul>
-    <li>No MFA on email accounts</li>
-    <li>Lack of employee awareness</li>
-    <li>Over-trusting email links</li>
-  </ul>
+      <!-- Business Impact -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-briefcase"></i>
+          Business Impact
+        </h2>
+        <div class="section-content">
+          <p>Potential outcomes include:</p>
+          <ul>
+            <li><strong>Account takeover:</strong> Attacker gains control of business email accounts</li>
+            <li><strong>Internal data access:</strong> Sensitive company information exposed</li>
+            <li><strong>Financial loss:</strong> Fraudulent transactions or invoice redirection</li>
+            <li><strong>Service disruption:</strong> Email systems compromised or taken offline</li>
+            <li><strong>Customer trust issues:</strong> Reputation damage if customers are affected</li>
+            <li><strong>Regulatory penalties:</strong> Potential fines if customer data is compromised</li>
+          </ul>
+        </div>
+      </section>
 
-  <h2>What you should do</h2>
-  <ul>
-    <li>Enable MFA for all email accounts</li>
-    <li>Train staff to avoid unknown links</li>
-    <li>Block risky attachments</li>
-  </ul>
-<!--
-  <div class="reactions">
-    <span class="reaction" data-reaction="useful">👍 Useful</span>
-    <span class="reaction" data-reaction="clear">💡 Clear</span>
-    <span class="reaction" data-reaction="concern">⚠️ Concerning</span>
-  </div>
--->
-</div>
+      <!-- Risk Level Assessment -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-exclamation-triangle"></i>
+          Risk Level Assessment
+        </h2>
+        <div class="section-content">
+          <div class="risk-assessment">
+            <span class="risk-badge high">High Risk</span>
+            <span>Because the attack relies on common email usage and human behavior, making it difficult to prevent through technical means alone.</span>
+          </div>
+          <p>The risk is particularly high for businesses without MFA, as a single compromised password can give attackers full access to email accounts and potentially other connected services.</p>
+        </div>
+      </section>
 
-<script src="../assets/main.js"></script>
+      <!-- What Usually Goes Wrong -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-times-circle"></i>
+          What Usually Goes Wrong
+        </h2>
+        <div class="section-content">
+          <p>Common failures seen in similar attacks:</p>
+          <ul>
+            <li>MFA not enabled on email accounts</li>
+            <li>Employees unaware of phishing indicators</li>
+            <li>No email filtering or security scanning</li>
+            <li>Weak password policies across the organization</li>
+            <li>Lack of incident response plan</li>
+            <li>Insufficient employee security training</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Recommended Actions -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-tasks"></i>
+          Recommended Actions
+        </h2>
+        <div class="section-content">
+          <div class="action-tier tier-immediate">
+            <div class="tier-title">
+              <i class="fas fa-circle" style="color: var(--danger-color);"></i>
+              Immediate (Today / This Week)
+            </div>
+            <ul>
+              <li>Enable MFA for all email accounts</li>
+              <li>Notify team about increased phishing risk</li>
+              <li>Check for any suspicious login activity</li>
+              <li>Reset passwords for high-risk accounts</li>
+            </ul>
+          </div>
+
+          <div class="action-tier tier-short-term">
+            <div class="tier-title">
+              <i class="fas fa-circle" style="color: var(--warning-color);"></i>
+              Short-term (This Month)
+            </div>
+            <ul>
+              <li>Review and improve email security settings</li>
+              <li>Remove unused or unnecessary account access</li>
+              <li>Implement email filtering solutions</li>
+              <li>Conduct a security awareness session</li>
+            </ul>
+          </div>
+
+          <div class="action-tier tier-long-term">
+            <div class="tier-title">
+              <i class="fas fa-circle" style="color: var(--success-color);"></i>
+              Long-term
+            </div>
+            <ul>
+              <li>Implement regular security awareness training</li>
+              <li>Conduct periodic security reviews</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- What This Does NOT Mean -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-ban"></i>
+          What This Does NOT Mean
+        </h2>
+        <div class="section-content">
+          <ul>
+            <li>You are not necessarily breached right now</li>
+            <li>Your business is not specifically targeted</li>
+            <li>This brief is for awareness and prevention, not to cause panic</li>
+            <li>These attacks are common and preventable with proper measures</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- How Founders Can Monitor This Risk -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-chart-line"></i>
+          How Founders Can Monitor This Risk
+        </h2>
+        <div class="section-content">
+          <p><strong>Signs to watch for:</strong></p>
+          <ul>
+            <li>Unusual login alerts from email providers</li>
+            <li>Unexpected emails asking for urgent action</li>
+            <li>Reports from employees of suspicious emails</li>
+            <li>Complaints from customers about strange communications</li>
+          </ul>
+          <p><strong>What alerts matter:</strong></p>
+          <ul>
+            <li>New login from unfamiliar location/device</li>
+            <li>Failed login attempts</li>
+            <li>Email forwarding rules you didn't create</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Source & Transparency -->
+      <section class="section">
+        <h2 class="section-title">
+          <i class="fas fa-link"></i>
+          Source & Transparency
+        </h2>
+        <div class="section-content">
+          <p>This brief is based on multiple security reports and industry analysis of phishing trends in the Indian business sector.</p>
+          <p>For detailed technical information, refer to:
+            <a href="#" class="source-link">
+              Original security reports
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </p>
+          <p>This is a summarized interpretation for business leaders, not a technical analysis.</p>
+        </div>
+      </section>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> This brief is for awareness and education only and does not constitute security advice or guarantee prevention. Always consult with security professionals for your specific situation.</p>
+      </div>
+
+      <!-- Reactions -->
+      <div class="reactions" data-brief-id="001">
+        <button class="reaction" data-reaction="useful" onclick="toggleReaction('001', 'useful')">
+          <i class="fas fa-thumbs-up"></i> Useful
+        </button>
+        <button class="reaction" data-reaction="clear" onclick="toggleReaction('001', 'clear')">
+          <i class="fas fa-lightbulb"></i> Clear
+        </button>
+        <button class="reaction" data-reaction="concern" onclick="toggleReaction('001', 'concern')">
+          <i class="fas fa-exclamation-triangle"></i> Concerning
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>RiskBrief</h3>
+          <p>Security news translated into plain language for founders and small teams.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Security Checklist</a></li>
+            <li><a href="#">Best Practices</a></li>
+            <li><a href="#">Glossary</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 RiskBrief. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle reaction
+    function toggleReaction(briefId, reactionType) {
+      const key = `reaction_${briefId}_${reactionType}`;
+      const reactionBtn = document.querySelector(`.reactions[data-brief-id="${briefId}"] .reaction[data-reaction="${reactionType}"]`);
+      
+      if (localStorage.getItem(key)) {
+        // Remove reaction
+        localStorage.removeItem(key);
+        reactionBtn.classList.remove('active');
+      } else {
+        // Add reaction
+        localStorage.setItem(key, "true");
+        reactionBtn.classList.add('active');
+        
+        // Remove other reactions for this brief
+        document.querySelectorAll(`.reactions[data-brief-id="${briefId}"] .reaction`).forEach(btn => {
+          if (btn.dataset.reaction !== reactionType) {
+            const otherKey = `reaction_${briefId}_${btn.dataset.reaction}`;
+            localStorage.removeItem(otherKey);
+            btn.classList.remove('active');
+          }
+        });
+      }
+      
+      console.log("Reaction toggled:", briefId, reactionType);
+    }
+
+    // Load saved reactions
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll(".reaction").forEach(btn => {
+        const briefId = btn.closest('.reactions').dataset.briefId;
+        const reactionType = btn.dataset.reaction;
+        const key = `reaction_${briefId}_${reactionType}`;
+
+        if (localStorage.getItem(key)) {
+          btn.classList.add('active');
+        }
+      });
+    });
+
+    // Track full brief read
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log("Full brief opened: 001");
+      // In a real app, this would send analytics data
+    });
+  </script>
 </body>
 </html>
