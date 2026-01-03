@@ -7,42 +7,42 @@
   "date": "December 2025",
 
   "executive_summary": [
-    "Cybersecurity researchers uncovered long-running malicious browser extension campaigns operated by a China-linked threat actor tracked as DarkSpectre. :contentReference[oaicite:0]{index=0}",
-    "These campaigns used seemingly legitimate extensions to stealthily collect browsing data, harvest corporate meeting intelligence, and commit fraud, impacting millions of users across major browsers. :contentReference[oaicite:1]{index=1}"
+    "Cybersecurity researchers uncovered long-running malicious browser extension campaigns operated by a China-linked threat actor tracked as DarkSpectre.",
+    "These campaigns used seemingly legitimate extensions to stealthily collect browsing data, harvest corporate meeting intelligence, and commit fraud, impacting millions of users across major browsers."
   ],
 
   "what_happened": [
-    "Threat intelligence firm Koi Security attributed multiple malicious extension campaigns—ShadyPanda, GhostPoster, and DarkSpectre—to a single threat actor cluster. :contentReference[oaicite:2]{index=2}",
-    "Over a period spanning more than seven years, extensions were published on Chrome, Edge, and Firefox stores with positive reviews and legitimate utility before executing malicious behaviors. :contentReference[oaicite:3]{index=3}",
-    "The third campaign, known as The Zoom Stealer, uses 18 extensions to collect corporate meeting data, including URLs, passwords, IDs, participant names, and metadata. :contentReference[oaicite:4]{index=4}"
+    "Threat intelligence firm Koi Security attributed multiple malicious extension campaigns—ShadyPanda, GhostPoster, and DarkSpectre—to a single threat actor cluster.",
+    "Over a period spanning more than seven years, extensions were published on Chrome, Edge, and Firefox stores with positive reviews and legitimate utility before executing malicious behaviors.",
+    "The third campaign, known as The Zoom Stealer, uses 18 extensions to collect corporate meeting data, including URLs, passwords, IDs, participant names, and metadata."
   ],
 
   "who_is_affected": [
-    "Users of Google Chrome, Microsoft Edge, and Mozilla Firefox browsers. :contentReference[oaicite:5]{index=5}",
-    "Organizations relying on web browsers for business tasks such as videoconferencing, collaboration, and online meetings. :contentReference[oaicite:6]{index=6}",
-    "Individuals that installed popular extensions with high install counts and positive trust signals. :contentReference[oaicite:7]{index=7}"
+    "Users of Google Chrome, Microsoft Edge, and Mozilla Firefox browsers.",
+    "Organizations relying on web browsers for business tasks such as videoconferencing, collaboration, and online meetings.",
+    "Individuals that installed popular extensions with high install counts and positive trust signals."
   ],
 
   "attack_flow": [
-    "Malicious browser extension uploaded to official web stores and installed by users. :contentReference[oaicite:8]{index=8}",
-    "Extensions initially behave normally to earn trust and avoid review detection. :contentReference[oaicite:9]{index=9}",
-    "After installation, hidden scripts begin data collection—search behavior, affiliate hijacks, or meeting intelligence exfiltration. :contentReference[oaicite:10]{index=10}",
-    "Collected data is streamed out over network connections to attacker-controlled servers. :contentReference[oaicite:11]{index=11}"
+    "Malicious browser extension uploaded to official web stores and installed by users.",
+    "Extensions initially behave normally to earn trust and avoid review detection.",
+    "After installation, hidden scripts begin data collection—search behavior, affiliate hijacks, or meeting intelligence exfiltration.",
+    "Collected data is streamed out over network connections to attacker-controlled servers."
   ],
 
   "business_impact": [
-    "Compromise of sensitive corporate intelligence such as meeting URLs, embedded passwords, and participant details. :contentReference[oaicite:12]{index=12}",
-    "Potential unauthorized access to corporate meetings and confidential discussions. :contentReference[oaicite:13]{index=13}",
-    "User privacy loss and risk of spear-phishing using harvested information. :contentReference[oaicite:14]{index=14}",
-    "Financial loss from affiliate fraud and unauthorized advertising link manipulation. :contentReference[oaicite:15]{index=15}"
+    "Compromise of sensitive corporate intelligence such as meeting URLs, embedded passwords, and participant details.",
+    "Potential unauthorized access to corporate meetings and confidential discussions.",
+    "User privacy loss and risk of spear-phishing using harvested information.",
+    "Financial loss from affiliate fraud and unauthorized advertising link manipulation."
   ],
 
-  "risk_reason": "By operating through trusted browser extension ecosystems and delaying malicious behavior to bypass store reviews, DarkSpectre leverages user trust to remain undetected for years, making mitigation difficult. :contentReference[oaicite:16]{index=16}",
+  "risk_reason": "By operating through trusted browser extension ecosystems and delaying malicious behavior to bypass store reviews, DarkSpectre leverages user trust to remain undetected for years, making mitigation difficult.",
 
   "what_usually_goes_wrong": [
-    "Users install browser extensions without scrutinizing permissions or source. :contentReference[oaicite:17]{index=17}",
-    "Extensions request broad access unrelated to their stated purpose (e.g., video conference platforms). :contentReference[oaicite:18]{index=18}",
-    "Lack of centralized enterprise controls over browser extensions. :contentReference[oaicite:19]{index=19}"
+    "Users install browser extensions without scrutinizing permissions or source.",
+    "Extensions request broad access unrelated to their stated purpose (e.g., video conference platforms).",
+    "Lack of centralized enterprise controls over browser extensions."
   ],
 
   "recommended_actions": {
@@ -62,7 +62,7 @@
   },
 
   "what_this_does_not_mean": [
-    "Every browser extension is harmful—only specific extensions with malicious payloads are at risk. :contentReference[oaicite:20]{index=20}",
+    "Every browser extension is harmful—only specific extensions with malicious payloads are at risk.",
     "User browsers are automatically compromised without user action."
   ],
 
