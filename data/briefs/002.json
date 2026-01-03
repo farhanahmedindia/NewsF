@@ -12,16 +12,16 @@
   ],
 
   "what_happened": [
-    "Cybersecurity researchers identified a multi-stage phishing campaign abusing Google Cloud Application Integration's Send Email task feature to send phishing messages from a valid Google domain. :contentReference[oaicite:0]{index=0}",
-    "Threat actors configured emails to resemble routine notifications (e.g., voicemail alerts or document access requests), increasing the likelihood of users trusting them. :contentReference[oaicite:1]{index=1}",
-    "Approximately 9,394 phishing emails were sent to around 3,200 organizations over a two-week period observed in December 2025. :contentReference[oaicite:2]{index=2}",
-    "Clicking the embedded links led victims through genuine Google storage redirection and fake CAPTCHA pages before landing on credential-harvesting login pages. :contentReference[oaicite:3]{index=3}"
+    "Cybersecurity researchers identified a multi-stage phishing campaign abusing Google Cloud Application Integration's Send Email task feature to send phishing messages from a valid Google domain.",
+    "Threat actors configured emails to resemble routine notifications (e.g., voicemail alerts or document access requests), increasing the likelihood of users trusting them.",
+    "Approximately 9,394 phishing emails were sent to around 3,200 organizations over a two-week period observed in December 2025.",
+    "Clicking the embedded links led victims through genuine Google storage redirection and fake CAPTCHA pages before landing on credential-harvesting login pages."
   ],
 
   "who_is_affected": [
     "Employees who receive legitimate-looking enterprise notifications",
     "Organizations in U.S., Asia-Pacific, Europe, Canada, and Latin America",
-    "Sectors relying on Google automation workflows such as manufacturing, tech, finance, and services. :contentReference[oaicite:4]{index=4}"
+    "Sectors relying on Google automation workflows such as manufacturing, tech, finance, and services."
   ],
 
   "attack_flow": [
