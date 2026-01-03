@@ -7,72 +7,72 @@
   "date": "December 2025",
 
   "executive_summary": [
-    "The Trust Wallet Chrome browser extension (version 2.68) was compromised, leading to unauthorized draining of user funds totaling approximately $7 million in various cryptocurrencies. :contentReference[oaicite:0]{index=0}",
-    "Trust Wallet confirmed the incident and urged affected users to update immediately to version 2.69, confirming reimbursement for losses. :contentReference[oaicite:1]{index=1}"
+    "The Trust Wallet Chrome browser extension (version 2.68) was compromised, leading to unauthorized draining of user funds totaling approximately $7 million in various cryptocurrencies.",
+    "Trust Wallet confirmed the incident and urged affected users to update immediately to version 2.69, confirming reimbursement for losses."
   ],
 
   "what_happened": [
-    "A malicious version (2.68) of the Trust Wallet Chrome browser extension was published — potentially via compromised Web Store credentials — injecting hidden JavaScript that exfiltrated sensitive wallet data. :contentReference[oaicite:2]{index=2}",
-    "Users who imported seed phrases or interacted with the compromised extension had their wallets drained as attackers captured credentials and moved funds to external addresses. :contentReference[oaicite:3]{index=3}",
-    "Reports indicated losses of roughly $6–7 million across Bitcoin, Ethereum, BNB, Solana, and other chains. :contentReference[oaicite:4]{index=4}",
-    "Trust Wallet released a patched version (2.69) and instructed users to stop using the vulnerable version immediately. :contentReference[oaicite:5]{index=5}"
+    "A malicious version (2.68) of the Trust Wallet Chrome browser extension was published — potentially via compromised Web Store credentials — injecting hidden JavaScript that exfiltrated sensitive wallet data.",
+    "Users who imported seed phrases or interacted with the compromised extension had their wallets drained as attackers captured credentials and moved funds to external addresses.",
+    "Reports indicated losses of roughly $6–7 million across Bitcoin, Ethereum, BNB, Solana, and other chains.",
+    "Trust Wallet released a patched version (2.69) and instructed users to stop using the vulnerable version immediately."
   ],
 
   "who_is_affected": [
-    "Users of the Trust Wallet Chrome extension version 2.68. :contentReference[oaicite:6]{index=6}",
-    "Self-custody holders who imported seed phrases into the compromised extension. :contentReference[oaicite:7]{index=7}",
-    "Crypto users active during the holiday period (Christmas Eve/Day 2025). :contentReference[oaicite:8]{index=8}"
+    "Users of the Trust Wallet Chrome extension version 2.68.",
+    "Self-custody holders who imported seed phrases into the compromised extension.",
+    "Crypto users active during the holiday period (Christmas Eve/Day 2025)."
   ],
 
   "attack_flow": [
-    "Compromised extension update (v2.68) released via Chrome Web Store. :contentReference[oaicite:9]{index=9}",
-    "Hidden malicious code runs on install or use, capturing seed phrases. :contentReference[oaicite:10]{index=10}",
-    "Captured credentials allow the attacker to access wallets and transfer funds. :contentReference[oaicite:11]{index=11}",
-    "Funds are drained and moved to external wallets on multiple chains. :contentReference[oaicite:12]{index=12}"
+    "Compromised extension update (v2.68) released via Chrome Web Store.",
+    "Hidden malicious code runs on install or use, capturing seed phrases.",
+    "Captured credentials allow the attacker to access wallets and transfer funds.",
+    "Funds are drained and moved to external wallets on multiple chains."
   ],
 
   "business_impact": [
-    "Loss of user funds totaling ~ $6–7 million. :contentReference[oaicite:13]{index=13}",
-    "Reputational damage and erosion of trust in browser extension wallets. :contentReference[oaicite:14]{index=14}",
-    "Emergency patch release and user support overhead. :contentReference[oaicite:15]{index=15}"
+    "Loss of user funds totaling ~ $6–7 million.",
+    "Reputational damage and erosion of trust in browser extension wallets.",
+    "Emergency patch release and user support overhead."
   ],
 
-  "risk_reason": "Browser extension supply-chain attacks exploit trust in Web Store updates and can capture sensitive input like seed phrases, enabling full wallet compromise. :contentReference[oaicite:16]{index=16}",
+  "risk_reason": "Browser extension supply-chain attacks exploit trust in Web Store updates and can capture sensitive input like seed phrases, enabling full wallet compromise.",
 
   "what_usually_goes_wrong": [
-    "Automatic updates introduce malicious code without verification. :contentReference[oaicite:17]{index=17}",
-    "Users import seed phrases into compromised software. :contentReference[oaicite:18]{index=18}",
-    "Insufficient vetting or protection of extension publishing credentials. :contentReference[oaicite:19]{index=19}"
+    "Automatic updates introduce malicious code without verification.",
+    "Users import seed phrases into compromised software.",
+    "Insufficient vetting or protection of extension publishing credentials."
   ],
 
   "recommended_actions": {
     "immediate": [
-      "Disable the affected Trust Wallet Chrome extension version 2.68. :contentReference[oaicite:20]{index=20}",
-      "Update immediately to the official fixed version 2.69. :contentReference[oaicite:21]{index=21}"
+      "Disable the affected Trust Wallet Chrome extension version 2.68.",
+      "Update immediately to the official fixed version 2.69."
     ],
     "short_term": [
-      "Review transaction history and secure remaining funds in offline wallets. :contentReference[oaicite:22]{index=22}",
-      "Avoid entering seed phrases into browser extensions. :contentReference[oaicite:23]{index=23}"
+      "Review transaction history and secure remaining funds in offline wallets.",
+      "Avoid entering seed phrases into browser extensions."
     ],
     "long_term": [
-      "Audit and restrict browser extension use in high-risk environments. :contentReference[oaicite:24]{index=24}",
-      "Implement multi-factor safeguards for wallet access beyond seed phrases. :contentReference[oaicite:25]{index=25}"
+      "Audit and restrict browser extension use in high-risk environments.",
+      "Implement multi-factor safeguards for wallet access beyond seed phrases."
     ]
   },
 
   "what_this_does_not_mean": [
-    "All Trust Wallet products are insecure — only a specific extension version was affected. :contentReference[oaicite:26]{index=26}",
+    "All Trust Wallet products are insecure — only a specific extension version was affected.",
     "The core blockchain protocols were hacked. (This was an extension compromise.)"
   ],
 
   "monitoring": {
     "signs": [
-      "Unexpected outflows from wallets without user authorization. :contentReference[oaicite:27]{index=27}",
-      "Installation of unverified browser extensions. :contentReference[oaicite:28]{index=28}"
+      "Unexpected outflows from wallets without user authorization.",
+      "Installation of unverified browser extensions."
     ],
     "alerts": [
-      "Transactions to unfamiliar addresses. :contentReference[oaicite:29]{index=29}",
-      "Warnings from on-chain monitoring tools about rapid fund movement. :contentReference[oaicite:30]{index=30}"
+      "Transactions to unfamiliar addresses.",
+      "Warnings from on-chain monitoring tools about rapid fund movement."
     ]
   },
 
