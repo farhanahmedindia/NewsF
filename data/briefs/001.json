@@ -1,68 +1,91 @@
 {
-  "id": "001",
-  "title": "Email phishing attacks increasing against Indian businesses",
-  "location": "India",
-  "category": "Email",
+  "id": "003",
+  "title": "Transparent Tribe deploys new remote access trojan in targeted attacks",
+  "location": "South Asia",
+  "category": "Malware",
   "risk": "high",
   "date": "January 2026",
 
   "executive_summary": [
-    "Phishing emails are increasing across Indian businesses.",
-    "One click can compromise entire email systems."
+    "A known threat actor group, Transparent Tribe, has introduced a new remote access trojan (RAT).",
+    "The malware enables long-term spying and system control on infected machines."
   ],
 
   "what_happened": [
-    "Attackers sent fake emails posing as trusted entities.",
-    "Victims entered credentials on fake pages."
+    "Security researchers identified a new malware campaign linked to Transparent Tribe.",
+    "The group deployed a custom RAT to gain persistent access to victim systems.",
+    "The malware was distributed using targeted social engineering techniques."
   ],
 
   "who_is_affected": [
-    "Small businesses",
-    "Teams without MFA",
-    "Finance and ecommerce companies"
+    "Government-related organizations",
+    "Research institutions",
+    "Individuals working in sensitive roles",
+    "Organizations in South Asia"
   ],
 
   "attack_flow": [
-    "Email sent",
-    "User clicks link",
-    "Fake login page",
-    "Credentials stolen"
+    "Target receives a crafted document or file",
+    "User opens the file",
+    "Malware is silently installed",
+    "Attacker gains remote access and persistence"
   ],
 
   "business_impact": [
-    "Account takeover",
-    "Financial fraud",
-    "Reputation damage"
+    "Unauthorized access to internal systems",
+    "Data theft and surveillance",
+    "Long-term compromise without detection",
+    "Loss of sensitive or strategic information"
   ],
 
-  "risk_reason": "Email attacks rely on human behavior and are hard to stop without MFA.",
+  "risk_reason": "Targeted malware attacks are difficult to detect and can remain active for long periods without obvious signs.",
 
   "what_usually_goes_wrong": [
-    "MFA not enabled",
-    "Employees not trained",
-    "Weak passwords"
+    "Users opening unverified attachments",
+    "Lack of endpoint monitoring",
+    "Outdated security controls",
+    "Over-reliance on antivirus alone"
   ],
 
   "recommended_actions": {
-    "immediate": ["Enable MFA", "Reset passwords"],
-    "short_term": ["Improve email filtering"],
-    "long_term": ["Security awareness training"]
+    "immediate": [
+      "Scan systems for unusual processes",
+      "Restrict execution of unknown files"
+    ],
+    "short_term": [
+      "Enable endpoint detection and response (EDR)",
+      "Review user access privileges"
+    ],
+    "long_term": [
+      "Conduct regular security awareness training",
+      "Harden systems against targeted attacks",
+      "Monitor for abnormal outbound connections"
+    ]
   },
 
   "what_this_does_not_mean": [
-    "You are already breached",
-    "You are specifically targeted"
+    "All organizations are being targeted",
+    "An infection is guaranteed",
+    "Standard malware affects everyone equally"
   ],
 
   "monitoring": {
-    "signs": ["Suspicious emails", "Unexpected login alerts"],
-    "alerts": ["New device login", "Email forwarding rule added"]
+    "signs": [
+      "Unusual background processes",
+      "Unexpected outbound network traffic",
+      "Unknown persistence mechanisms"
+    ],
+    "alerts": [
+      "New scheduled tasks",
+      "Unauthorized startup entries",
+      "Unexpected remote connections"
+    ]
   },
 
   "sources": [
     {
       "title": "The Hacker News",
-      "url": "https://thehackernews.com/"
+      "url": "https://thehackernews.com/2026/01/transparent-tribe-launches-new-rat.html"
     }
   ]
 }
