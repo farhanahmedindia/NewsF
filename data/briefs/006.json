@@ -1,5 +1,5 @@
 {
-  "id": "008",
+  "id": "006",
   "title": "Silver Fox phishing campaign targets Indian taxpayers with ValleyRAT malware",
   "location": "India",
   "category": "Malware",
@@ -7,14 +7,14 @@
   "date": "December 2025",
 
   "executive_summary": [
-    "The China-linked threat actor Silver Fox has been observed targeting Indian users with income tax-themed phishing emails to distribute a modular remote access trojan called ValleyRAT. :contentReference[oaicite:0]{index=0}",
-    "The campaign involves deception, DLL hijacking, persistence mechanisms, and modular payload delivery that supports keylogging, credential theft, and defense evasion. :contentReference[oaicite:1]{index=1}"
+    "The China-linked threat actor Silver Fox has been observed targeting Indian users with income tax-themed phishing emails to distribute a modular remote access trojan called ValleyRAT.",
+    "The campaign involves deception, DLL hijacking, persistence mechanisms, and modular payload delivery that supports keylogging, credential theft, and defense evasion."
   ],
 
   "what_happened": [
-    "Researchers from CloudSEK reported that Silver Fox sent phishing emails to Indian recipients claiming to be from the Indian Income Tax Department. :contentReference[oaicite:2]{index=2}",
-    "The emails contained decoy PDFs that, when opened, redirected victims to a malicious domain that served a ZIP file with a staged malware installer. :contentReference[oaicite:3]{index=3}",
-    "The installer used a legitimate executable and a rogue DLL to sideload and evade detection, ultimately deploying ValleyRAT for remote access and further malicious actions. :contentReference[oaicite:4]{index=4}"
+    "Researchers from CloudSEK reported that Silver Fox sent phishing emails to Indian recipients claiming to be from the Indian Income Tax Department.",
+    "The emails contained decoy PDFs that, when opened, redirected victims to a malicious domain that served a ZIP file with a staged malware installer.",
+    "The installer used a legitimate executable and a rogue DLL to sideload and evade detection, ultimately deploying ValleyRAT for remote access and further malicious actions."
   ],
 
   "who_is_affected": [
@@ -38,7 +38,7 @@
     "Increased operational risk due to unauthorized remote access"
   ],
 
-  "risk_reason": "Phishing campaigns that leverage trusted or official themes—such as tax communications—can increase user trust and significantly raise the likelihood of successful infection with persistent malware. :contentReference[oaicite:5]{index=5}",
+  "risk_reason": "Phishing campaigns that leverage trusted or official themes—such as tax communications—can increase user trust and significantly raise the likelihood of successful infection with persistent malware.",
 
   "what_usually_goes_wrong": [
     "Users open attachments believing them to be legitimate",
