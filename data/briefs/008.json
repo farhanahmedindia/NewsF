@@ -1,0 +1,90 @@
+{
+  "id": "008",
+  "title": "Cognizant hit with class-action lawsuits over TriZetto data breach",
+  "location": "United States",
+  "category": "Data Breach",
+  "risk": "medium",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "Cognizant Technology Solutions and its healthcare claims subsidiary, TriZetto Provider Solutions (TPS), are facing multiple class-action lawsuits in the U.S. following a significant data breach. :contentReference[oaicite:0]{index=0}",
+    "Allegations focus on delayed discovery of the breach and slow notification to affected individuals, increasing potential harm. :contentReference[oaicite:1]{index=1}"
+  ],
+
+  "what_happened": [
+    "Unauthorized access to TriZetto systems reportedly began as early as November 2024, but Cognizant did not discover the intrusion until October 2, 2025. :contentReference[oaicite:2]{index=2}",
+    "Hackers accessed and compromised personal data, including Social Security numbers, financial account information, and home addresses. :contentReference[oaicite:3]{index=3}",
+    "Multiple class-action suits were filed in federal courts in New Jersey and Missouri, alleging negligence in data protection and delayed breach notification. :contentReference[oaicite:4]{index=4}"
+  ],
+
+  "who_is_affected": [
+    "Individuals in the United States whose personal data was processed by TriZetto’s systems. :contentReference[oaicite:5]{index=5}",
+    "Residents of multiple states including Arizona and California whose information was exposed. :contentReference[oaicite:6]{index=6}",
+    "Healthcare providers, insurers, and clients relying on TriZetto for claims processing, due to reputational and operational impacts."
+  ],
+
+  "attack_flow": [
+    "Initial unauthorized access to the TriZetto network. :contentReference[oaicite:7]{index=7}",
+    "Prolonged undetected compromise of sensitive data systems. :contentReference[oaicite:8]{index=8}",
+    "Eventual discovery of the breach nearly a year later. :contentReference[oaicite:9]{index=9}",
+    "Filing of class-action lawsuits alleging delayed notification and insufficient protection."
+  ],
+
+  "business_impact": [
+    "Legal liability from multiple class-action lawsuits. :contentReference[oaicite:10]{index=10}",
+    "Financial costs associated with litigation, potential settlements, and any required remediation.",
+    "Reputational damage affecting customer trust, particularly in healthcare IT services. :contentReference[oaicite:11]{index=11}",
+    "Potential regulatory scrutiny and compliance challenges."
+  ],
+
+  "risk_reason": "Delayed detection and notification of a breach involving highly sensitive personal data increases the risk of identity theft, fraud, and legal liability, making this a material risk event. :contentReference[oaicite:12]{index=12}",
+
+  "what_usually_goes_wrong": [
+    "Insufficient real-time monitoring and detection capability. :contentReference[oaicite:13]{index=13}",
+    "Delayed or incomplete breach notification to affected individuals. :contentReference[oaicite:14]{index=14}",
+    "Failure to implement robust data security controls or to encrypt sensitive personal information."
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Notify affected individuals promptly and provide guidance on monitoring for identity theft.",
+      "Engage independent forensic and legal teams to assess root cause and compliance obligations."
+    ],
+    "short_term": [
+      "Implement advanced intrusion detection and response (IDR) systems.",
+      "Review and strengthen data protection controls, including encryption and access logging."
+    ],
+    "long_term": [
+      "Establish continuous security monitoring and incident response workflows.",
+      "Conduct regular third-party security audits and penetration tests.",
+      "Review governance and compliance programs related to breach reporting."
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "That all Cognizant services or clients were breached — this relates specifically to the TriZetto incident. :contentReference[oaicite:15]{index=15}",
+    "That fraud has already occurred for every affected individual — the lawsuits address potential future risks."
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unusual external access logs or previous anomalous login attempts.",
+      "Notifications from credit monitoring services about potential misuse of personal data."
+    ],
+    "alerts": [
+      "New reports of identity theft tied to compromised data.",
+      "Regulatory inquiries or enforcement actions related to breach disclosure."
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "Cybersecurity News",
+      "url": "https://cybersecuritynews.com/cognizant-lawsuits-trizetto-data-breach/"
+    },
+    {
+      "title": "Fortune India Explainer: Cognizant and TriZetto embroiled in new class action complaints",
+      "url": "https://www.fortuneindia.com/business-news/fortune-india-explainer-cognizant-and-trizetto-embroiled-in-new-class-action-complaints/129159"
+    }
+  ]
+}
