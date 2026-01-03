@@ -77,7 +77,24 @@
     "Collects browsing data, hijacks affiliate links, and steals corporate meeting intelligence",
     "Over 8.8 million browser users impacted across Chrome, Edge, and Firefox"
   ]
+},
+
+{
+  "id": "006",
+  "title": "Silver Fox phishing campaign targets Indian taxpayers with ValleyRAT malware",
+  "icon": "fa-exclamation-triangle",
+  "category": "malware",
+  "risk": "high",
+  "location": "India",
+  "date": "2025-12-30",
+  "summary": "The Silver Fox threat actor used income tax–themed phishing emails and fake software sites to install the modular ValleyRAT remote access trojan on Indian users’ systems.",
+  "points": [
+    "Phishing lures impersonate India’s Income Tax Department",
+    "Modular ValleyRAT malware enables persistence and credential theft",
+    "Attack chain leverages DLL hijacking and SEO-poisoned download sites"
+  ]
 }
+
 
 
 
