@@ -1,0 +1,90 @@
+{
+  "id": "002",
+  "title": "Cloud phishing campaign abuses Google Cloud email feature",
+  "location": "Global",
+  "category": "Email",
+  "risk": "medium",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "Attackers used the Google Cloud Application Integration email feature to send phishing emails from a legitimate domain.",
+    "By abusing trusted infrastructure, the campaign bypassed common email security defenses and targeted thousands of recipients."
+  ],
+
+  "what_happened": [
+    "Cybersecurity researchers identified a multi-stage phishing campaign abusing Google Cloud Application Integration's Send Email task feature to send phishing messages from a valid Google domain. :contentReference[oaicite:0]{index=0}",
+    "Threat actors configured emails to resemble routine notifications (e.g., voicemail alerts or document access requests), increasing the likelihood of users trusting them. :contentReference[oaicite:1]{index=1}",
+    "Approximately 9,394 phishing emails were sent to around 3,200 organizations over a two-week period observed in December 2025. :contentReference[oaicite:2]{index=2}",
+    "Clicking the embedded links led victims through genuine Google storage redirection and fake CAPTCHA pages before landing on credential-harvesting login pages. :contentReference[oaicite:3]{index=3}"
+  ],
+
+  "who_is_affected": [
+    "Employees who receive legitimate-looking enterprise notifications",
+    "Organizations in U.S., Asia-Pacific, Europe, Canada, and Latin America",
+    "Sectors relying on Google automation workflows such as manufacturing, tech, finance, and services. :contentReference[oaicite:4]{index=4}"
+  ],
+
+  "attack_flow": [
+    "Abuse of Google Cloud Application Integration to send phishing email",
+    "Email delivered from a legitimate flask domain (noreply-application-integration@google.com)",
+    "User clicks link → redirected via Google Cloud storage",
+    "Fake CAPTCHA verification → credential-stealing page"
+  ],
+
+  "business_impact": [
+    "Compromised user credentials",
+    "Potential broader account compromise",
+    "Increased risk of secondary attacks (account takeover, lateral movement)"
+  ],
+
+  "risk_reason": "Using trusted cloud infrastructure reduces detection likelihood by security filters and increases user trust, making email-based phishing more effective.",
+
+  "what_usually_goes_wrong": [
+    "Users trust emails from well-known domains",
+    "Email filters unable to distinguish legitimate automation from abuse",
+    "Lack of additional email security checks beyond DMARC/SPF"
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Warn users about suspicious emails even if from trusted domains",
+      "Reset credentials for compromised accounts"
+    ],
+    "short_term": [
+      "Enable advanced email filtering with behavioral analysis",
+      "Implement MFA to reduce credential theft impact"
+    ],
+    "long_term": [
+      "Train employees on cloud-based phishing tactics",
+      "Monitor automation services for abuse",
+      "Review cloud integration permissions regularly"
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "Google Cloud infrastructure is fundamentally insecure",
+    "All emails from trusted domains are malicious"
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unusual email volumes from automation tasks",
+      "Unexpected sign-in attempts after phishing events"
+    ],
+    "alerts": [
+      "Login failures on harvested accounts",
+      "New device login from foreign location"
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/cybercriminals-abuse-google-cloud-email.html"
+    },
+    {
+      "title": "SecurityAffairs coverage of the campaign",
+      "url": "https://securityaffairs.com/186425/cyber-crime/phishing-campaign-abuses-google-cloud-application-to-impersonate-legitimate-google-emails.html"
+    }
+  ]
+}

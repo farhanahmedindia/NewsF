@@ -15,4 +15,21 @@
   ]
   },
 
+{
+  "id": "002",
+  "title": "Cloud phishing campaign abuses Google Cloud email feature",
+  "icon": "fa-envelope",
+  "category": "email",
+  "risk": "medium",
+  "location": "Global",
+  "date": "2026-01-02",
+  "summary": "Cybercriminals abused Google Cloud’s email integration to send thousands of phishing emails that bypass traditional filters and steal credentials.",
+  "points": [
+    "Attack used legitimate Google Cloud automation to send phishing emails",
+    "Nearly 9,400 emails sent to over 3,200 organizations",
+    "Campaign leverages trusted domains to bypass DMARC/SPF"
+  ]
+}
+
+
 ]
