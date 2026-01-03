@@ -1,0 +1,87 @@
+{
+  "id": "003",
+  "title": "RondoDox botnet exploits critical React2Shell flaw",
+  "location": "Global",
+  "category": "Botnet",
+  "risk": "high",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "A botnet named RondoDox has been actively exploiting a critical unauthenticated remote code execution vulnerability known as React2Shell in React Server Components and Next.js. :contentReference[oaicite:0]{index=0}",
+    "The campaign has been ongoing for around nine months, targeting IoT devices and web servers worldwide to deploy malware and cryptominers. :contentReference[oaicite:1]{index=1}"
+  ],
+
+  "what_happened": [
+    "Researchers observed the RondoDox botnet abusing the React2Shell vulnerability (CVE-2025-55182, CVSS 10.0) to gain remote code execution on exposed systems. :contentReference[oaicite:2]{index=2}",
+    "The botnet campaign progressed through multiple phases from reconnaissance to large-scale automated exploitation. :contentReference[oaicite:3]{index=3}",
+    "Once systems are compromised, payloads such as cryptominers, a Mirai variant, and bot loaders are deployed. :contentReference[oaicite:4]{index=4}"
+  ],
+
+  "who_is_affected": [
+    "Internet-connected web servers running vulnerable Next.js instances",
+    "IoT devices exposed to the internet (e.g., consumer routers, cameras)",
+    "Enterprises with unmanaged edge devices"
+  ],
+
+  "attack_flow": [
+    "Botnet scans internet for systems vulnerable to React2Shell",
+    "Unauthenticated exploit of RCE vulnerability on IoT and web servers",
+    "Deployment of malware payloads (cryptominers, bot loaders)",
+    "Persistence mechanisms installed and competing malware removed"
+  ],
+
+  "business_impact": [
+    "Unauthorized remote access to infrastructure",
+    "Resource hijacking (cryptomining, bandwidth consumption)",
+    "Elevated risk of DDoS attacks from botnet networks",
+    "Potential service degradation and increased operational costs"
+  ],
+
+  "risk_reason": "Exploitation of a critical unauthenticated remote code execution flaw in widely used frameworks makes a high number of systems vulnerable to automated compromise. :contentReference[oaicite:5]{index=5}",
+
+  "what_usually_goes_wrong": [
+    "Failure to patch known critical vulnerabilities in a timely manner",
+    "Exposure of IoT devices without sufficient network segmentation",
+    "Lack of monitoring for unauthorized activity"
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Apply patches or updates for Next.js and React Server Components to address the React2Shell vulnerability",
+      "Identify and isolate vulnerable devices from public networks"
+    ],
+    "short_term": [
+      "Deploy Web Application Firewalls (WAFs) to block exploit traffic",
+      "Monitor systems for unusual processes or connections"
+    ],
+    "long_term": [
+      "Segment IoT devices into dedicated VLANs",
+      "Implement continuous vulnerability scanning and patch management",
+      "Adopt threat intelligence feeds to block known command-and-control IPs"
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "Every organization using Next.js is already breached",
+    "Patching once solves all IoT security concerns"
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unexpected new cron jobs or persistence artifacts",
+      "Unusual outbound connections from servers or devices",
+      "High CPU usage indicative of cryptomining"
+    ],
+    "alerts": [
+      "Detection of exploitation attempts targeting React2Shell",
+      "Unauthorized remote shells or malware execution"
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/rondodox-botnet-exploits-critical.html"
+    }
+  ]
+}

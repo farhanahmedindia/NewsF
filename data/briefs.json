@@ -29,7 +29,24 @@
     "Nearly 9,400 emails sent to over 3,200 organizations",
     "Campaign leverages trusted domains to bypass DMARC/SPF"
   ]
+},
+
+{
+  "id": "003",
+  "title": "RondoDox botnet exploits critical React2Shell flaw",
+  "icon": "fa-network-wired",
+  "category": "botnet",
+  "risk": "high",
+  "location": "Global",
+  "date": "2026-01-01",
+  "summary": "The RondoDox botnet has been exploiting a critical remote code execution flaw in React Server Components (React2Shell) to hijack IoT devices and web servers, enrolling them into malware and crypto-miner deployments.",
+  "points": [
+    "Botnet abuses a critical Next.js vulnerability for unauthenticated code execution",
+    "Over 90,000 exposed systems remain vulnerable worldwide",
+    "Payloads include cryptominers, bot loaders, and Mirai variants"
+  ]
 }
+
 
 
 ]
