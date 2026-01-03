@@ -7,41 +7,41 @@
   "date": "January 2026",
 
   "executive_summary": [
-    "Cognizant Technology Solutions and its healthcare claims subsidiary, TriZetto Provider Solutions (TPS), are facing multiple class-action lawsuits in the U.S. following a significant data breach. :contentReference[oaicite:0]{index=0}",
-    "Allegations focus on delayed discovery of the breach and slow notification to affected individuals, increasing potential harm. :contentReference[oaicite:1]{index=1}"
+    "Cognizant Technology Solutions and its healthcare claims subsidiary, TriZetto Provider Solutions (TPS), are facing multiple class-action lawsuits in the U.S. following a significant data breach.",
+    "Allegations focus on delayed discovery of the breach and slow notification to affected individuals, increasing potential harm."
   ],
 
   "what_happened": [
-    "Unauthorized access to TriZetto systems reportedly began as early as November 2024, but Cognizant did not discover the intrusion until October 2, 2025. :contentReference[oaicite:2]{index=2}",
-    "Hackers accessed and compromised personal data, including Social Security numbers, financial account information, and home addresses. :contentReference[oaicite:3]{index=3}",
-    "Multiple class-action suits were filed in federal courts in New Jersey and Missouri, alleging negligence in data protection and delayed breach notification. :contentReference[oaicite:4]{index=4}"
+    "Unauthorized access to TriZetto systems reportedly began as early as November 2024, but Cognizant did not discover the intrusion until October 2, 2025.",
+    "Hackers accessed and compromised personal data, including Social Security numbers, financial account information, and home addresses.",
+    "Multiple class-action suits were filed in federal courts in New Jersey and Missouri, alleging negligence in data protection and delayed breach notification."
   ],
 
   "who_is_affected": [
-    "Individuals in the United States whose personal data was processed by TriZetto’s systems. :contentReference[oaicite:5]{index=5}",
-    "Residents of multiple states including Arizona and California whose information was exposed. :contentReference[oaicite:6]{index=6}",
+    "Individuals in the United States whose personal data was processed by TriZetto’s systems.",
+    "Residents of multiple states including Arizona and California whose information was exposed.",
     "Healthcare providers, insurers, and clients relying on TriZetto for claims processing, due to reputational and operational impacts."
   ],
 
   "attack_flow": [
-    "Initial unauthorized access to the TriZetto network. :contentReference[oaicite:7]{index=7}",
-    "Prolonged undetected compromise of sensitive data systems. :contentReference[oaicite:8]{index=8}",
-    "Eventual discovery of the breach nearly a year later. :contentReference[oaicite:9]{index=9}",
+    "Initial unauthorized access to the TriZetto network.",
+    "Prolonged undetected compromise of sensitive data systems.",
+    "Eventual discovery of the breach nearly a year later.",
     "Filing of class-action lawsuits alleging delayed notification and insufficient protection."
   ],
 
   "business_impact": [
-    "Legal liability from multiple class-action lawsuits. :contentReference[oaicite:10]{index=10}",
+    "Legal liability from multiple class-action lawsuits.",
     "Financial costs associated with litigation, potential settlements, and any required remediation.",
-    "Reputational damage affecting customer trust, particularly in healthcare IT services. :contentReference[oaicite:11]{index=11}",
+    "Reputational damage affecting customer trust, particularly in healthcare IT services.",
     "Potential regulatory scrutiny and compliance challenges."
   ],
 
-  "risk_reason": "Delayed detection and notification of a breach involving highly sensitive personal data increases the risk of identity theft, fraud, and legal liability, making this a material risk event. :contentReference[oaicite:12]{index=12}",
+  "risk_reason": "Delayed detection and notification of a breach involving highly sensitive personal data increases the risk of identity theft, fraud, and legal liability, making this a material risk event.",
 
   "what_usually_goes_wrong": [
-    "Insufficient real-time monitoring and detection capability. :contentReference[oaicite:13]{index=13}",
-    "Delayed or incomplete breach notification to affected individuals. :contentReference[oaicite:14]{index=14}",
+    "Insufficient real-time monitoring and detection capability.",
+    "Delayed or incomplete breach notification to affected individuals.",
     "Failure to implement robust data security controls or to encrypt sensitive personal information."
   ],
 
@@ -62,7 +62,7 @@
   },
 
   "what_this_does_not_mean": [
-    "That all Cognizant services or clients were breached — this relates specifically to the TriZetto incident. :contentReference[oaicite:15]{index=15}",
+    "That all Cognizant services or clients were breached — this relates specifically to the TriZetto incident.",
     "That fraud has already occurred for every affected individual — the lawsuits address potential future risks."
   ],
 
