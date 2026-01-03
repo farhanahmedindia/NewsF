@@ -1,0 +1,86 @@
+{
+  "id": "007",
+  "title": "DarkSpectre browser extension campaigns exposed worldwide",
+  "location": "Global",
+  "category": "Browser-extension",
+  "risk": "high",
+  "date": "December 2025",
+
+  "executive_summary": [
+    "Cybersecurity researchers uncovered long-running malicious browser extension campaigns operated by a China-linked threat actor tracked as DarkSpectre. :contentReference[oaicite:0]{index=0}",
+    "These campaigns used seemingly legitimate extensions to stealthily collect browsing data, harvest corporate meeting intelligence, and commit fraud, impacting millions of users across major browsers. :contentReference[oaicite:1]{index=1}"
+  ],
+
+  "what_happened": [
+    "Threat intelligence firm Koi Security attributed multiple malicious extension campaigns—ShadyPanda, GhostPoster, and DarkSpectre—to a single threat actor cluster. :contentReference[oaicite:2]{index=2}",
+    "Over a period spanning more than seven years, extensions were published on Chrome, Edge, and Firefox stores with positive reviews and legitimate utility before executing malicious behaviors. :contentReference[oaicite:3]{index=3}",
+    "The third campaign, known as The Zoom Stealer, uses 18 extensions to collect corporate meeting data, including URLs, passwords, IDs, participant names, and metadata. :contentReference[oaicite:4]{index=4}"
+  ],
+
+  "who_is_affected": [
+    "Users of Google Chrome, Microsoft Edge, and Mozilla Firefox browsers. :contentReference[oaicite:5]{index=5}",
+    "Organizations relying on web browsers for business tasks such as videoconferencing, collaboration, and online meetings. :contentReference[oaicite:6]{index=6}",
+    "Individuals that installed popular extensions with high install counts and positive trust signals. :contentReference[oaicite:7]{index=7}"
+  ],
+
+  "attack_flow": [
+    "Malicious browser extension uploaded to official web stores and installed by users. :contentReference[oaicite:8]{index=8}",
+    "Extensions initially behave normally to earn trust and avoid review detection. :contentReference[oaicite:9]{index=9}",
+    "After installation, hidden scripts begin data collection—search behavior, affiliate hijacks, or meeting intelligence exfiltration. :contentReference[oaicite:10]{index=10}",
+    "Collected data is streamed out over network connections to attacker-controlled servers. :contentReference[oaicite:11]{index=11}"
+  ],
+
+  "business_impact": [
+    "Compromise of sensitive corporate intelligence such as meeting URLs, embedded passwords, and participant details. :contentReference[oaicite:12]{index=12}",
+    "Potential unauthorized access to corporate meetings and confidential discussions. :contentReference[oaicite:13]{index=13}",
+    "User privacy loss and risk of spear-phishing using harvested information. :contentReference[oaicite:14]{index=14}",
+    "Financial loss from affiliate fraud and unauthorized advertising link manipulation. :contentReference[oaicite:15]{index=15}"
+  ],
+
+  "risk_reason": "By operating through trusted browser extension ecosystems and delaying malicious behavior to bypass store reviews, DarkSpectre leverages user trust to remain undetected for years, making mitigation difficult. :contentReference[oaicite:16]{index=16}",
+
+  "what_usually_goes_wrong": [
+    "Users install browser extensions without scrutinizing permissions or source. :contentReference[oaicite:17]{index=17}",
+    "Extensions request broad access unrelated to their stated purpose (e.g., video conference platforms). :contentReference[oaicite:18]{index=18}",
+    "Lack of centralized enterprise controls over browser extensions. :contentReference[oaicite:19]{index=19}"
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Audit installed browser extensions across organizational endpoints.",
+      "Remove any unapproved or suspicious extensions."
+    ],
+    "short_term": [
+      "Enforce policies to whitelist only vetted extensions via enterprise browser management tools.",
+      "Monitor network traffic for unexpected WebSocket connections from user devices."
+    ],
+    "long_term": [
+      "Train users on the risks of installing third-party extensions.",
+      "Implement endpoint detection tools that track extension behavior.",
+      "Enable enterprise-wide browser security controls."
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "Every browser extension is harmful—only specific extensions with malicious payloads are at risk. :contentReference[oaicite:20]{index=20}",
+    "User browsers are automatically compromised without user action."
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Suspicious outbound traffic from browser processes.",
+      "Unexpected data exfiltration patterns (e.g., frequent WebSocket connections)."
+    ],
+    "alerts": [
+      "Unauthorized extension installations detected by device management.",
+      "Alerts for unusual corporate meeting access or credential usage."
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "The Hacker News",
+      "url": "https://thehackernews.com/2025/12/darkspectre-browser-extension-campaigns.html"
+    }
+  ]
+}

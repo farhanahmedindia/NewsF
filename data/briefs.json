@@ -45,6 +45,38 @@
     "Over 90,000 exposed systems remain vulnerable worldwide",
     "Payloads include cryptominers, bot loaders, and Mirai variants"
   ]
+},
+
+{
+  "id": "004",
+  "title": "Trust Wallet Chrome extension hack causes $7M in crypto losses",
+  "icon": "fa-wallet",
+  "category": "crypto",
+  "risk": "high",
+  "location": "Global",
+  "date": "2025-12-26",
+  "summary": "A malicious update of the Trust Wallet Chrome extension led to the theft of around $7 million in cryptocurrency from users, prompting urgent patching and reimbursements.",
+  "points": [
+    "Supply-chain compromise of extension version 2.68 injected malicious code",
+    "Attackers exfiltrated wallet seed phrases and drained funds",
+    "Trust Wallet urged immediate update to version 2.69"
+  ]
+},
+
+{
+  "id": "005",
+  "title": "DarkSpectre browser extension campaigns exposed worldwide",
+  "icon": "fa-browser",
+  "category": "browser-extension",
+  "risk": "high",
+  "location": "Global",
+  "date": "2025-12-31",
+  "summary": "A sophisticated threat actor has run malicious browser extension campaigns over years, affecting millions of Chrome, Edge, and Firefox users to harvest data and corporate intelligence.",
+  "points": [
+    "Multiple campaigns (ShadyPanda, GhostPoster, Zoom Stealer) linked to a single threat actor",
+    "Collects browsing data, hijacks affiliate links, and steals corporate meeting intelligence",
+    "Over 8.8 million browser users impacted across Chrome, Edge, and Firefox"
+  ]
 }
 
 
