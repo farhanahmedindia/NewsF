@@ -7,14 +7,14 @@
   "date": "January 2026",
 
   "executive_summary": [
-    "A botnet named RondoDox has been actively exploiting a critical unauthenticated remote code execution vulnerability known as React2Shell in React Server Components and Next.js. :contentReference[oaicite:0]{index=0}",
-    "The campaign has been ongoing for around nine months, targeting IoT devices and web servers worldwide to deploy malware and cryptominers. :contentReference[oaicite:1]{index=1}"
+    "A botnet named RondoDox has been actively exploiting a critical unauthenticated remote code execution vulnerability known as React2Shell in React Server Components and Next.js.",
+    "The campaign has been ongoing for around nine months, targeting IoT devices and web servers worldwide to deploy malware and cryptominers."
   ],
 
   "what_happened": [
-    "Researchers observed the RondoDox botnet abusing the React2Shell vulnerability (CVE-2025-55182, CVSS 10.0) to gain remote code execution on exposed systems. :contentReference[oaicite:2]{index=2}",
-    "The botnet campaign progressed through multiple phases from reconnaissance to large-scale automated exploitation. :contentReference[oaicite:3]{index=3}",
-    "Once systems are compromised, payloads such as cryptominers, a Mirai variant, and bot loaders are deployed. :contentReference[oaicite:4]{index=4}"
+    "Researchers observed the RondoDox botnet abusing the React2Shell vulnerability (CVE-2025-55182, CVSS 10.0) to gain remote code execution on exposed systems.",
+    "The botnet campaign progressed through multiple phases from reconnaissance to large-scale automated exploitation.",
+    "Once systems are compromised, payloads such as cryptominers, a Mirai variant, and bot loaders are deployed."
   ],
 
   "who_is_affected": [
@@ -37,7 +37,7 @@
     "Potential service degradation and increased operational costs"
   ],
 
-  "risk_reason": "Exploitation of a critical unauthenticated remote code execution flaw in widely used frameworks makes a high number of systems vulnerable to automated compromise. :contentReference[oaicite:5]{index=5}",
+  "risk_reason": "Exploitation of a critical unauthenticated remote code execution flaw in widely used frameworks makes a high number of systems vulnerable to automated compromise.",
 
   "what_usually_goes_wrong": [
     "Failure to patch known critical vulnerabilities in a timely manner",
