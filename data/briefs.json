@@ -93,7 +93,24 @@
     "Modular ValleyRAT malware enables persistence and credential theft",
     "Attack chain leverages DLL hijacking and SEO-poisoned download sites"
   ]
+},
+
+{
+  "id": "007",
+  "title": "Fortinet firewalls exposed by active exploitation of critical vulnerabilities",
+  "icon": "fa-firewall",
+  "category": "vulnerability",
+  "risk": "high",
+  "location": "Global",
+  "date": "2025-12-20",
+  "summary": "Threat actors are actively exploiting critical authentication bypass and SSO vulnerabilities in Fortinet firewalls and related products, allowing unauthorized access and configuration exports.",
+  "points": [
+    "Critical vulnerabilities in FortiOS and related products are exploited in the wild",
+    "Unauthenticated attackers can bypass authentication or gain admin access",
+    "Exposure of sensitive firewall configurations and network access"
+  ]
 }
+
 
 
 
