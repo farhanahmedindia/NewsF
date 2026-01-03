@@ -7,71 +7,71 @@
   "date": "December 2025",
 
   "executive_summary": [
-    "Multiple Fortinet vulnerabilities in FortiGate, FortiOS, FortiProxy, FortiSwitchManager, and FortiWeb are being actively exploited by threat actors. :contentReference[oaicite:0]{index=0}",
-    "The flaws allow bypass of authentication and administrative access, exposing firewall management interfaces and sensitive configuration data. :contentReference[oaicite:1]{index=1}"
+    "Multiple Fortinet vulnerabilities in FortiGate, FortiOS, FortiProxy, FortiSwitchManager, and FortiWeb are being actively exploited by threat actors.",
+    "The flaws allow bypass of authentication and administrative access, exposing firewall management interfaces and sensitive configuration data."
   ],
 
   "what_happened": [
-    "Security researchers and incident responders observed exploitation of authentication bypass vulnerabilities affecting Fortinet products. :contentReference[oaicite:2]{index=2}",
-    "CVE-2025-59718 and CVE-2025-59719 were added to the U.S. CISA Known Exploited Vulnerabilities (KEV) catalog due to confirmed real-world attacks. :contentReference[oaicite:3]{index=3}",
-    "Attackers used crafted Security Assertion Markup Language (SAML) messages to authenticate as administrators, allowing unauthorized access to systems and configuration exports. :contentReference[oaicite:4]{index=4}"
+    "Security researchers and incident responders observed exploitation of authentication bypass vulnerabilities affecting Fortinet products.",
+    "CVE-2025-59718 and CVE-2025-59719 were added to the U.S. CISA Known Exploited Vulnerabilities (KEV) catalog due to confirmed real-world attacks.",
+    "Attackers used crafted Security Assertion Markup Language (SAML) messages to authenticate as administrators, allowing unauthorized access to systems and configuration exports."
   ],
 
   "who_is_affected": [
-    "Organizations using Fortinet FortiGate firewalls and related products globally. :contentReference[oaicite:5]{index=5}",
-    "Networks with exposed management interfaces accessible from the public internet. :contentReference[oaicite:6]{index=6}",
-    "Teams relying on FortiCloud SSO without segregated internal management access. :contentReference[oaicite:7]{index=7}"
+    "Organizations using Fortinet FortiGate firewalls and related products globally.",
+    "Networks with exposed management interfaces accessible from the public internet.",
+    "Teams relying on FortiCloud SSO without segregated internal management access."
   ],
 
   "attack_flow": [
-    "Threat actor targets authentication bypass vulnerability in FortiOS, FortiProxy, FortiSwitchManager, or FortiWeb. :contentReference[oaicite:8]{index=8}",
-    "Crafted SAML or authentication messages bypass SSO and grant administrative access. :contentReference[oaicite:9]{index=9}",
-    "Attacker exports firewall configuration and potentially extracts sensitive network information. :contentReference[oaicite:10]{index=10}",
+    "Threat actor targets authentication bypass vulnerability in FortiOS, FortiProxy, FortiSwitchManager, or FortiWeb.",
+    "Crafted SAML or authentication messages bypass SSO and grant administrative access.",
+    "Attacker exports firewall configuration and potentially extracts sensitive network information.",
     "Unauthorized access may lead to further network compromise or persistence."
   ],
 
   "business_impact": [
-    "Unauthorized administrative access to firewall devices. :contentReference[oaicite:11]{index=11}",
-    "Exposure of sensitive configuration files, including credentials and network topology. :contentReference[oaicite:12]{index=12}",
-    "Increased risk of lateral network attacks and data exfiltration. :contentReference[oaicite:13]{index=13}"
+    "Unauthorized administrative access to firewall devices.",
+    "Exposure of sensitive configuration files, including credentials and network topology.",
+    "Increased risk of lateral network attacks and data exfiltration."
   ],
 
-  "risk_reason": "Vulnerabilities that allow authentication bypass or unauthorized admin access on perimeter devices like firewalls pose systemic risk, undermining network defenses at a foundational level. :contentReference[oaicite:14]{index=14}",
+  "risk_reason": "Vulnerabilities that allow authentication bypass or unauthorized admin access on perimeter devices like firewalls pose systemic risk, undermining network defenses at a foundational level.",
 
   "what_usually_goes_wrong": [
-    "Firewall management interfaces left exposed to the internet. :contentReference[oaicite:15]{index=15}",
-    "Default or weak authentication configurations. :contentReference[oaicite:16]{index=16}",
-    "Slow patching and failure to apply security advisories promptly. :contentReference[oaicite:17]{index=17}"
+    "Firewall management interfaces left exposed to the internet.",
+    "Default or weak authentication configurations.",
+    "Slow patching and failure to apply security advisories promptly."
   ],
 
   "recommended_actions": {
     "immediate": [
-      "Apply available security patches for all affected Fortinet products. :contentReference[oaicite:18]{index=18}",
-      "Restrict management interface access to internal or secured admin networks. :contentReference[oaicite:19]{index=19}"
+      "Apply available security patches for all affected Fortinet products.",
+      "Restrict management interface access to internal or secured admin networks."
     ],
     "short_term": [
-      "Disable FortiCloud SSO where not required or enforce strict authentication policies. :contentReference[oaicite:20]{index=20}",
-      "Audit current firewall configurations for unauthorized changes. :contentReference[oaicite:21]{index=21}"
+      "Disable FortiCloud SSO where not required or enforce strict authentication policies.",
+      "Audit current firewall configurations for unauthorized changes."
     ],
     "long_term": [
-      "Implement network segmentation and zero-trust principles for management access. :contentReference[oaicite:22]{index=22}",
-      "Integrate vulnerability scanning and automated patch management. :contentReference[oaicite:23]{index=23}"
+      "Implement network segmentation and zero-trust principles for management access.",
+      "Integrate vulnerability scanning and automated patch management."
     ]
   },
 
   "what_this_does_not_mean": [
-    "All Fortinet deployments are fully compromised by default — risk depends on configuration and exposure. :contentReference[oaicite:24]{index=24}",
-    "All firewalls are breached — only unpatched, exposed devices are at immediate risk. :contentReference[oaicite:25]{index=25}"
+    "All Fortinet deployments are fully compromised by default — risk depends on configuration and exposure.",
+    "All firewalls are breached — only unpatched, exposed devices are at immediate risk."
   ],
 
   "monitoring": {
     "signs": [
-      "Unexpected administrative logins or configuration exports. :contentReference[oaicite:26]{index=26}",
-      "Anomalous firewall traffic patterns. :contentReference[oaicite:27]{index=27}"
+      "Unexpected administrative logins or configuration exports.",
+      "Anomalous firewall traffic patterns."
     ],
     "alerts": [
-      "Multiple failed or successful admin login attempts from unfamiliar IPs. :contentReference[oaicite:28]{index=28}",
-      "Configuration file downloads outside scheduled maintenance windows. :contentReference[oaicite:29]{index=29}"
+      "Multiple failed or successful admin login attempts from unfamiliar IPs.",
+      "Configuration file downloads outside scheduled maintenance windows."
     ]
   },
 
