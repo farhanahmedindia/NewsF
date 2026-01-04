@@ -125,7 +125,24 @@
     "Sensitive personal data (SSNs, financial info, addresses) were exposed",
     "Lawsuits allege failure to protect data and delayed breach notifications"
   ]
+},
+
+{
+  "id": "009",
+  "title": "Infostealers abused to hijack legitimate business infrastructure for malware hosting",
+  "icon": "fa-bug",
+  "category": "malware",
+  "risk": "medium",
+  "location": "Global",
+  "date": "2026-01-03",
+  "summary": "Attackers are using stolen credentials from infostealer malware to take over legitimate business websites and turn them into platforms that host and distribute malware.",
+  "points": [
+    "Stolen credentials from infostealers enable attackers to compromise business infrastructure",
+    "Compromised sites are repurposed to host and distribute malware",
+    "This creates a self-sustaining criminal cycle harming victims and third parties"
+  ]
 }
+
 
 
 

@@ -1,0 +1,84 @@
+{
+  "id": "009",
+  "title": "Infostealers abused to hijack legitimate business infrastructure for malware hosting",
+  "location": "Global",
+  "category": "Malware",
+  "risk": "medium",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "A new trend in cybercrime has emerged where attackers use stolen credentials gathered by infostealer malware to take control of legitimate business infrastructure. (CybersecurityNews)",
+    "Once compromised, these business systems are used to host and distribute malware, creating a dangerous self-sustaining cycle. (CybersecurityNews)"
+  ],
+
+  "what_happened": [
+    "Threat researchers observed that credentials stolen by infostealer malware are sold or reused by attackers to log into legitimate business systems. (CybersecurityNews)",
+    "Compromised business infrastructure — such as websites or servers — is then repurposed to host malware or malicious content. (CybersecurityNews)",
+    "This abuse turns victim systems into vectors for further malware distribution, escalating the impact of the initial theft. (CybersecurityNews)"
+  ],
+
+  "who_is_affected": [
+    "Organizations whose credentials have been stolen by infostealers. (CybersecurityNews)",
+    "Customers or users who interact with compromised business systems. (CybersecurityNews)",
+    "The broader internet community exposed to malware hosted on legitimate sites. (CybersecurityNews)"
+  ],
+
+  "attack_flow": [
+    "Infostealer malware infects a system and steals credentials. (CybersecurityNews)",
+    "Certain stolen credentials are valid for business infrastructure accounts. (CybersecurityNews)",
+    "Attackers log into these legitimate systems using the stolen credentials. (CybersecurityNews)",
+    "Compromised infrastructure begins hosting or redirecting to malware payloads. (CybersecurityNews)"
+  ],
+
+  "business_impact": [
+    "Reputation damage to businesses whose infrastructure is misused. (CybersecurityNews)",
+    "Loss of trust from customers who encounter malware hosted on legitimate systems. (CybersecurityNews)",
+    "Increased risk of follow-on attacks facilitated by the compromised infrastructure. (CybersecurityNews)"
+  ],
+
+  "risk_reason": "Infostealers not only collect sensitive credentials but also empower attackers to compromise trusted systems, turning victims into unintentional accomplices in broader malware campaigns. (CybersecurityNews)",
+
+  "what_usually_goes_wrong": [
+    "Poor credential hygiene and reuse across business infrastructure. (CybersecurityNews)",
+    "Lack of multi-factor authentication on business systems.",
+    "Insufficient monitoring for unusual access to legitimate infrastructure."
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Force reset passwords and revoke credentials that may have been stolen.",
+      "Review logs for unauthorized access to business systems."
+    ],
+    "short_term": [
+      "Enable multi-factor authentication on all critical accounts.",
+      "Scan infrastructure for signs of unexpected malware hosting."
+    ],
+    "long_term": [
+      "Implement regular credential audits and rotation.",
+      "Deploy enterprise-grade threat detection and response tools."
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "Your entire infrastructure is compromised just because infostealers exist.",
+    "All stolen credentials will immediately lead to misuse."
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unexpected login events from unusual IP addresses.",
+      "New unknown files or redirects on business web assets."
+    ],
+    "alerts": [
+      "User access from locations inconsistent with business patterns.",
+      "High outbound traffic from infrastructure hosting malware."
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "Cybersecurity News",
+      "url": "https://cybersecuritynews.com/infostealers-to-hijack-legitimate-business-infrastructure/"
+    }
+  ]
+}
