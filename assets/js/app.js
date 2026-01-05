@@ -208,12 +208,6 @@ function renderSection(title, items, showNew = false) {
 function copyBriefLink(id) {
   const url = `https://news.riskbrief.io/brief.html?id=${id}`;
   navigator.clipboard.writeText(url)
-    .then(() => {
-      showToast("Unable to copy link");
-    })
-    .catch(() => {
-      alert("Link copied. Share it anywhere 👍");
-    });
 }
 
 
