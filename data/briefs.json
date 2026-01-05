@@ -1,4 +1,40 @@
 [
+
+
+{
+  "id": "009",
+  "title": "Infostealers abused to hijack legitimate business infrastructure for malware hosting",
+  "icon": "fa-bug",
+  "category": "malware",
+  "risk": "medium",
+  "location": "Global",
+  "date": "2026-01-03",
+  "summary": "Attackers are using stolen credentials from infostealer malware to take over legitimate business websites and turn them into platforms that host and distribute malware.",
+  "points": [
+    "Stolen credentials from infostealers enable attackers to compromise business infrastructure",
+    "Compromised sites are repurposed to host and distribute malware",
+    "This creates a self-sustaining criminal cycle harming victims and third parties"
+  ]
+},
+
+{
+  "id": "008",
+  "title": "Cognizant hit with class-action lawsuits over TriZetto data breach",
+  "icon": "fa-user-shield",
+  "category": "data_breach",
+  "risk": "medium",
+  "location": "United States",
+  "date": "2026-01-02",
+  "summary": "Cognizant and its subsidiary TriZetto face multiple U.S. class-action lawsuits after a long-running data breach exposed sensitive personal data and delayed notification to victims.",
+  "points": [
+    "Unauthorized access to TriZetto systems went undetected for nearly a year",
+    "Sensitive personal data (SSNs, financial info, addresses) were exposed",
+    "Lawsuits allege failure to protect data and delayed breach notifications"
+  ]
+},
+
+
+  
   {
   "id": "001",
   "title": "Transparent Tribe deploys new remote access trojan in targeted attacks",
@@ -47,21 +83,8 @@
   ]
 },
 
-{
-  "id": "004",
-  "title": "Trust Wallet Chrome extension hack causes $7M in crypto losses",
-  "icon": "fa-wallet",
-  "category": "crypto",
-  "risk": "high",
-  "location": "Global",
-  "date": "2025-12-26",
-  "summary": "A malicious update of the Trust Wallet Chrome extension led to the theft of around $7 million in cryptocurrency from users, prompting urgent patching and reimbursements.",
-  "points": [
-    "Supply-chain compromise of extension version 2.68 injected malicious code",
-    "Attackers exfiltrated wallet seed phrases and drained funds",
-    "Trust Wallet urged immediate update to version 2.69"
-  ]
-},
+
+
 
 {
   "id": "005",
@@ -95,6 +118,26 @@
   ]
 },
 
+
+  
+
+{
+  "id": "004",
+  "title": "Trust Wallet Chrome extension hack causes $7M in crypto losses",
+  "icon": "fa-wallet",
+  "category": "crypto",
+  "risk": "high",
+  "location": "Global",
+  "date": "2025-12-26",
+  "summary": "A malicious update of the Trust Wallet Chrome extension led to the theft of around $7 million in cryptocurrency from users, prompting urgent patching and reimbursements.",
+  "points": [
+    "Supply-chain compromise of extension version 2.68 injected malicious code",
+    "Attackers exfiltrated wallet seed phrases and drained funds",
+    "Trust Wallet urged immediate update to version 2.69"
+  ]
+},
+
+
 {
   "id": "007",
   "title": "Fortinet firewalls exposed by active exploitation of critical vulnerabilities",
@@ -109,39 +152,11 @@
     "Unauthenticated attackers can bypass authentication or gain admin access",
     "Exposure of sensitive firewall configurations and network access"
   ]
-},
-
-{
-  "id": "008",
-  "title": "Cognizant hit with class-action lawsuits over TriZetto data breach",
-  "icon": "fa-user-shield",
-  "category": "data_breach",
-  "risk": "medium",
-  "location": "United States",
-  "date": "2026-01-02",
-  "summary": "Cognizant and its subsidiary TriZetto face multiple U.S. class-action lawsuits after a long-running data breach exposed sensitive personal data and delayed notification to victims.",
-  "points": [
-    "Unauthorized access to TriZetto systems went undetected for nearly a year",
-    "Sensitive personal data (SSNs, financial info, addresses) were exposed",
-    "Lawsuits allege failure to protect data and delayed breach notifications"
-  ]
-},
-
-{
-  "id": "009",
-  "title": "Infostealers abused to hijack legitimate business infrastructure for malware hosting",
-  "icon": "fa-bug",
-  "category": "malware",
-  "risk": "medium",
-  "location": "Global",
-  "date": "2026-01-03",
-  "summary": "Attackers are using stolen credentials from infostealer malware to take over legitimate business websites and turn them into platforms that host and distribute malware.",
-  "points": [
-    "Stolen credentials from infostealers enable attackers to compromise business infrastructure",
-    "Compromised sites are repurposed to host and distribute malware",
-    "This creates a self-sustaining criminal cycle harming victims and third parties"
-  ]
 }
+
+
+
+
 
 
 
