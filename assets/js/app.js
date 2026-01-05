@@ -209,10 +209,10 @@ function copyBriefLink(id) {
   const url = `https://news.riskbrief.io/brief.html?id=${id}`;
   navigator.clipboard.writeText(url)
     .then(() => {
-      showToast("Link copied. Share it anywhere 👍");
+      showToast("Unable to copy link");
     })
     .catch(() => {
-      alert("Unable to copy link");
+      alert("Link copied. Share it anywhere 👍");
     });
 }
 
