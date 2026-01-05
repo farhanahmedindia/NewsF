@@ -17,6 +17,27 @@
   ]
 },
 
+
+{
+  "id": "010",
+  "title": "Fake Eternl Desktop phishing scam targets Cardano users",
+  "icon": "fa-wallet",
+  "category": "phishing",
+  "risk": "medium",
+  "location": "Global",
+  "date": "2026-01-02",
+  "summary": "A sophisticated phishing campaign distributed a fake “Eternl Desktop” wallet installer to lure Cardano ecosystem users, with malicious remote access components embedded in the installer.",
+  "points": [
+    "Fraudulent email mimics official Eternl Desktop release announcement",
+    "Download link points to unverified domain and fake installer",
+    "Installer contains remote access/monitoring tool enabling unauthorized access"
+  ]
+},
+
+
+
+  
+
 {
   "id": "008",
   "title": "Cognizant hit with class-action lawsuits over TriZetto data breach",
