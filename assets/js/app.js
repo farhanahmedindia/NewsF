@@ -252,12 +252,14 @@ function renderCard(b, showNew = false) {
       <a href="/brief.html?id=${b.id}" class="read-more">
         Read full brief <i class="fas fa-arrow-right"></i>
       </a>
-    </div>
+   
 
 
-    <button class="reaction share-btn" onclick="copyBriefLink(b.id)">
+    <button class="reaction share-btn" onclick="copyBriefLink('${b.id}')">
   <i class="fas fa-link"></i> Copy link
 </button>
+
+ </div>
 
 
   </div>`;
