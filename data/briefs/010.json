@@ -7,72 +7,72 @@
   "date": "January 2026",
 
   "executive_summary": [
-    "A sophisticated phishing campaign targeted Cardano ecosystem participants with a fake “Eternl Desktop” wallet announcement email. (Cyber Press) :contentReference[oaicite:0]{index=0}",
-    "The fraudulent installer masquerading as official wallet software actually deploys remote access and monitoring tools on victims’ systems. (Cyber Press) :contentReference[oaicite:1]{index=1}"
+    "A sophisticated phishing campaign targeted Cardano ecosystem participants with a fake “Eternl Desktop” wallet announcement email. (Cyber Press)",
+    "The fraudulent installer masquerading as official wallet software actually deploys remote access and monitoring tools on victims’ systems. (Cyber Press)"
   ],
 
   "what_happened": [
-    "A fraudulent email claiming a new “Eternl Desktop” release circulated in late December 2025. (Cyber Press) :contentReference[oaicite:2]{index=2}",
-    "The email used ecosystem-specific terminology to appear authentic and entice users with mentions of staking and token rewards. (Cyber Press) :contentReference[oaicite:3]{index=3}",
-    "The provided download link directed victims to a newly registered, unverified domain that is not associated with the official Eternl project. (Cyber Press) :contentReference[oaicite:4]{index=4}",
-    "The downloaded MSI installer contains a remote monitoring and management tool (LogMeIn GoTo Resolve Unattended) repurposed to enable unauthorized remote access. (Cyber Press) :contentReference[oaicite:5]{index=5}"
+    "A fraudulent email claiming a new “Eternl Desktop” release circulated in late December 2025. (Cyber Press)",
+    "The email used ecosystem-specific terminology to appear authentic and entice users with mentions of staking and token rewards. (Cyber Press)",
+    "The provided download link directed victims to a newly registered, unverified domain that is not associated with the official Eternl project. (Cyber Press)",
+    "The downloaded MSI installer contains a remote monitoring and management tool (LogMeIn GoTo Resolve Unattended) repurposed to enable unauthorized remote access. (Cyber Press)"
   ],
 
   "who_is_affected": [
-    "Users of the Eternl wallet or participants in the Cardano ecosystem who received and acted on the phishing email. (Cyber Press) :contentReference[oaicite:6]{index=6}",
-    "Cryptocurrency holders whose systems may have been compromised by the fake installer. (Cyber Press) :contentReference[oaicite:7]{index=7}",
-    "Any individual or organization using infrastructure where the malicious installer was deployed. (Cyber Press) :contentReference[oaicite:8]{index=8}"
+    "Users of the Eternl wallet or participants in the Cardano ecosystem who received and acted on the phishing email. (Cyber Press)",
+    "Cryptocurrency holders whose systems may have been compromised by the fake installer. (Cyber Press)",
+    "Any individual or organization using infrastructure where the malicious installer was deployed. (Cyber Press)"
   ],
 
   "attack_flow": [
-    "Attacker sends phishing email disguised as official Eternl Desktop announcement. (Cyber Press) :contentReference[oaicite:9]{index=9}",
-    "Victim clicks link to an unverified domain and downloads MSI installer. (Cyber Press) :contentReference[oaicite:10]{index=10}",
-    "Installer executes and deploys remote access/monitoring components. (Cyber Press) :contentReference[oaicite:11]{index=11}",
-    "Executable establishes outbound connections to third-party services, enabling data transfer and remote access. (Cyber Press) :contentReference[oaicite:12]{index=12}"
+    "Attacker sends phishing email disguised as official Eternl Desktop announcement. (Cyber Press)",
+    "Victim clicks link to an unverified domain and downloads MSI installer. (Cyber Press)",
+    "Installer executes and deploys remote access/monitoring components. (Cyber Press)",
+    "Executable establishes outbound connections to third-party services, enabling data transfer and remote access. (Cyber Press)"
   ],
 
   "business_impact": [
-    "Compromise of user systems with unauthorized remote access capabilities. (Cyber Press) :contentReference[oaicite:13]{index=13}",
-    "Potential theft of digital assets or credentials stored on infected devices. (Cyber Press) :contentReference[oaicite:14]{index=14}",
-    "Erosion of trust in wallet distribution practices and ecosystem communication channels. (Cyber Press) :contentReference[oaicite:15]{index=15}"
+    "Compromise of user systems with unauthorized remote access capabilities. (Cyber Press)",
+    "Potential theft of digital assets or credentials stored on infected devices. (Cyber Press)",
+    "Erosion of trust in wallet distribution practices and ecosystem communication channels. (Cyber Press)"
   ],
 
-  "risk_reason": "Phishing campaigns that mimic official software updates can deceive users into installing malicious software, giving attackers unauthorized access and control. (Cyber Press) :contentReference[oaicite:16]{index=16}",
+  "risk_reason": "Phishing campaigns that mimic official software updates can deceive users into installing malicious software, giving attackers unauthorized access and control. (Cyber Press)",
 
   "what_usually_goes_wrong": [
-    "Users trust emails that look professional and align with community terminology. (Cyber Press) :contentReference[oaicite:17]{index=17}",
-    "Download links point to unverified domains instead of official sources. (Cyber Press) :contentReference[oaicite:18]{index=18}",
-    "Installers lack digital signatures and verification mechanisms. (Cyber Press) :contentReference[oaicite:19]{index=19}"
+    "Users trust emails that look professional and align with community terminology. (Cyber Press)",
+    "Download links point to unverified domains instead of official sources. (Cyber Press)",
+    "Installers lack digital signatures and verification mechanisms. (Cyber Press)"
   ],
 
   "recommended_actions": {
     "immediate": [
-      "Do not download or install software from unfamiliar or unverified domains. (Cyber Press) :contentReference[oaicite:20]{index=20}",
-      "Verify software releases only through official project channels and repositories. (Cyber Press) :contentReference[oaicite:21]{index=21}"
+      "Do not download or install software from unfamiliar or unverified domains. (Cyber Press)",
+      "Verify software releases only through official project channels and repositories. (Cyber Press)"
     ],
     "short_term": [
-      "Scan affected systems for unauthorized remote access tools. (Cyber Press) :contentReference[oaicite:22]{index=22}",
-      "Review network connections for suspicious outbound activity. (Cyber Press) :contentReference[oaicite:23]{index=23}"
+      "Scan affected systems for unauthorized remote access tools. (Cyber Press)",
+      "Review network connections for suspicious outbound activity. (Cyber Press)"
     ],
     "long_term": [
-      "Educate users about phishing campaigns and verifying digital signatures. (Cyber Press) :contentReference[oaicite:24]{index=24}",
-      "Implement endpoint security solutions that inspect installers and detect anomalous behavior. (Cyber Press) :contentReference[oaicite:25]{index=25}"
+      "Educate users about phishing campaigns and verifying digital signatures. (Cyber Press)",
+      "Implement endpoint security solutions that inspect installers and detect anomalous behavior. (Cyber Press)"
     ]
   },
 
   "what_this_does_not_mean": [
-    "All Eternl or Cardano software is compromised — only the fake phishing installer is malicious. (Cyber Press) :contentReference[oaicite:26]{index=26}",
-    "Receiving an email alone means compromise — action (download/install) is required for malware execution. (Cyber Press) :contentReference[oaicite:27]{index=27}"
+    "All Eternl or Cardano software is compromised — only the fake phishing installer is malicious. (Cyber Press)",
+    "Receiving an email alone means compromise — action (download/install) is required for malware execution. (Cyber Press) "
   ],
 
   "monitoring": {
     "signs": [
-      "Unexpected outgoing connections to remote management services. (Cyber Press) :contentReference[oaicite:28]{index=28}",
-      "Unknown processes or services related to GoTo Resolve running on endpoints. (Cyber Press) :contentReference[oaicite:29]{index=29}"
+      "Unexpected outgoing connections to remote management services. (Cyber Press)",
+      "Unknown processes or services related to GoTo Resolve running on endpoints. (Cyber Press)"
     ],
     "alerts": [
-      "Alerts for unsigned installers executed on user systems. (Cyber Press) :contentReference[oaicite:30]{index=30}",
-      "Detection of unauthorized remote access tools or sessions. (Cyber Press) :contentReference[oaicite:31]{index=31}"
+      "Alerts for unsigned installers executed on user systems. (Cyber Press) ",
+      "Detection of unauthorized remote access tools or sessions. (Cyber Press)"
     ]
   },
 
