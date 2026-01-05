@@ -255,7 +255,7 @@ function renderCard(b, showNew = false) {
     </div>
 
 
-    <button class="reaction share-btn" onclick="copyBriefLink(${b.id})">
+    <button class="reaction share-btn" onclick="copyBriefLink(b.id)">
   <i class="fas fa-link"></i> Copy link
 </button>
 
