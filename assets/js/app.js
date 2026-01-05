@@ -204,6 +204,20 @@ function renderSection(title, items, showNew = false) {
   </div>`;
 }
 
+
+function copyBriefLink(id) {
+  const url = `https://news.riskbrief.io/brief.html?id=${id}`;
+  navigator.clipboard.writeText(url)
+    .then(() => {
+      showToast("Link copied. Share it anywhere 👍");
+    })
+    .catch(() => {
+      alert("Unable to copy link");
+    });
+}
+
+
+
 function renderCard(b, showNew = false) {
   const formattedDate = b.date.toLocaleDateString("en-US", {
     month: "short",
@@ -239,6 +253,12 @@ function renderCard(b, showNew = false) {
         Read full brief <i class="fas fa-arrow-right"></i>
       </a>
     </div>
+
+
+    <button class="reaction share-btn" onclick="copyBriefLink(${b.id})">
+  <i class="fas fa-link"></i> Copy link
+</button>
+
 
   </div>`;
 }
