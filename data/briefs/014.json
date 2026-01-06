@@ -1,0 +1,85 @@
+{
+  "id": "014",
+  "title": "WhatsApp leakage allows device fingerprinting via multi-device protocol",
+  "location": "Global",
+  "category": "Vulnerability",
+  "risk": "medium",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "Researchers have identified that WhatsApp’s multi-device encryption implementation inadvertently leaks metadata that can be used to identify the operating system of users’ devices.",
+    "This device fingerprinting information can aid attackers in tailoring exploits or malware to specific platforms without direct user interaction."
+  ],
+
+  "what_happened": [
+    "WhatsApp’s multi-device feature creates separate encrypted sessions for each device, generating unique encryption keys per device.",
+    "Differences in device key identifiers (e.g., Signed Pre-Key and One-Time Pre-Key patterns) let attackers distinguish operating systems like Android and iOS.",
+    "Attackers can passively query WhatsApp servers for these session keys to infer device types without alerting users.",
+    "Meta has partially addressed this issue by randomizing some key assignment values, but other distinguishable identifiers remain."
+  ],
+
+  "who_is_affected": [
+    "WhatsApp users across all platforms.",
+    "Organizations relying on WhatsApp for secure communications.",
+    "Security teams concerned about targeted attacks based on device type."
+  ],
+
+  "attack_flow": [
+    "Attacker identifies a target’s WhatsApp account.",
+    "Attacker queries session key identifiers via the multi-device protocol.",
+    "Extracted metadata reveals the device operating system.",
+    "Attacker uses that information to choose platform-specific exploits or payloads."
+  ],
+
+  "business_impact": [
+    "Increased risk of targeted malware delivery customized for specific devices.",
+    "Potential reconnaissance advantage for advanced persistent threats.",
+    "Undermining of perceived privacy guarantees of end-to-end messaging."
+  ],
+
+  "risk_reason": "Even encrypted messaging protocols can inadvertently leak metadata that facilitates device classification, which attackers can use to tailor higher-impact attacks without user interaction.",
+
+  "what_usually_goes_wrong": [
+    "Assuming end-to-end encryption covers all metadata privacy.",
+    "Not monitoring protocol features that reveal side-channel indicators.",
+    "Delays in assigning public vulnerability tracking (e.g., CVEs) for metadata issues."
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Review mobile platform security posture and avoid relying solely on metadata guarantees.",
+      "Encourage users to limit linked devices where feasible."
+    ],
+    "short_term": [
+      "Monitor for unusual or targeted exploit attempts informed by device type.",
+      "Engage with vendor advisories to understand ongoing fixes."
+    ],
+    "long_term": [
+      "Advocate for transparent vendor disclosure and CVE tracking of metadata privacy issues.",
+      "Assess use of additional privacy-strengthening measures (e.g., SIM-binding, stronger session isolation)."
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "WhatsApp encryption is broken — the core message encryption remains secure.",
+    "Every WhatsApp user is actively at risk of compromise — the issue is metadata leakage, not direct code execution."
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unusual targeted payload attempts based on known device types.",
+      "Unexpected probing of multi-device session features."
+    ],
+    "alerts": [
+      "Detection of reconnaissance activity tied to messaging protocols.",
+      "Unusual access patterns to WhatsApp session metadata."
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "Cybersecurity News",
+      "url": "https://cybersecuritynews.com/whatsapp-device-fingerprinting/"
+    }
+  ]
+}

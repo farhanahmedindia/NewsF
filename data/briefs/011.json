@@ -1,0 +1,84 @@
+{
+  "id": "011",
+  "title": "Russia-aligned hackers abuse Viber to deliver malware to Ukrainian targets",
+  "location": "Ukraine",
+  "category": "Espionage",
+  "risk": "high",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "A Russia-aligned cyber espionage group has been observed using the Viber messaging platform to distribute malicious files to Ukrainian military and government organizations.",
+    "The campaign shifts malware delivery from email to instant messaging to increase success and evade traditional security controls."
+  ],
+
+  "what_happened": [
+    "Attackers sent malicious ZIP archives over Viber containing Windows shortcut (LNK) files disguised as Microsoft Word and Excel documents.",
+    "When opened, these shortcut files executed PowerShell commands that downloaded additional malware from attacker-controlled servers.",
+    "The malware chain deployed a loader that ran in memory and ultimately installed a remote access trojan, allowing attackers to control infected systems."
+  ],
+
+  "who_is_affected": [
+    "Ukrainian military units",
+    "Government departments and public sector organizations",
+    "Individuals receiving unsolicited files via messaging platforms"
+  ],
+
+  "attack_flow": [
+    "Malicious ZIP archive sent via Viber message",
+    "Victim opens disguised shortcut file",
+    "PowerShell downloads additional payloads",
+    "Malware executes in memory and establishes remote access"
+  ],
+
+  "business_impact": [
+    "Unauthorized access to sensitive systems",
+    "Potential theft of confidential or strategic information",
+    "Increased risk of espionage and follow-on attacks"
+  ],
+
+  "risk_reason": "Using a trusted messaging platform as a delivery mechanism allows attackers to bypass email security controls and exploit user trust, making detection and prevention more difficult.",
+
+  "what_usually_goes_wrong": [
+    "Users trust files received through familiar messaging apps",
+    "Shortcut files are mistaken for legitimate documents",
+    "Messaging traffic is not monitored as closely as email"
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Warn users not to open unsolicited archives or files received via messaging apps",
+      "Restrict execution of shortcut files on endpoints"
+    ],
+    "short_term": [
+      "Monitor systems for suspicious PowerShell activity",
+      "Inspect outbound traffic for unexpected downloads"
+    ],
+    "long_term": [
+      "Include messaging platforms in security awareness training",
+      "Extend endpoint monitoring to detect in-memory malware execution"
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "All Viber communications are malicious",
+    "Messaging apps are inherently insecure"
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unexpected PowerShell execution",
+      "Unknown scheduled tasks or startup entries"
+    ],
+    "alerts": [
+      "Detection of remote access tools on endpoints",
+      "Inbound archives received through messaging applications"
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/russia-aligned-hackers-abuse-viber-to.html"
+    }
+  ]
+}

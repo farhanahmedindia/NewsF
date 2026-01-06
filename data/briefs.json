@@ -1,5 +1,73 @@
 [
 
+{
+  "id": "014",
+  "title": "WhatsApp leakage allows device fingerprinting via multi-device protocol",
+  "icon": "fa-mobile",
+  "category": "vulnerability",
+  "risk": "medium",
+  "location": "Global",
+  "date": "2026-01-05",
+  "summary": "WhatsApp’s multi-device encryption implementation leaks metadata that can be used to fingerprint users’ device operating systems, potentially aiding targeted attacks and malware delivery.",
+  "points": [
+    "Multi-device feature reveals device OS fingerprints",
+    "Attackers can passively query metadata without user interaction",
+    "Partial fixes have been deployed, but risks remain"
+  ]
+},
+
+
+{
+  "id": "013",
+  "title": "New VVS Stealer malware targets Discord accounts via obfuscated Python code",
+  "icon": "fa-virus",
+  "category": "malware",
+  "risk": "medium",
+  "location": "Global",
+  "date": "2026-01-05",
+  "summary": "A Python-based infostealer called VVS Stealer is being used to harvest Discord credentials, tokens, browser data, screenshots, and hijack active sessions, with code obfuscated to evade detection.",
+  "points": [
+    "Targets Discord credentials and tokens",
+    "Harvests browser data including cookies and passwords",
+    "Uses Pyarmor obfuscation and persistence via Windows Startup"
+  ]
+},
+
+
+{
+  "id": "012",
+  "title": "Kimwolf Android botnet infects over 2 million devices",
+  "icon": "fa-android",
+  "category": "botnet",
+  "risk": "high",
+  "location": "Global",
+  "date": "2026-01-05",
+  "summary": "The Kimwolf Android botnet has compromised more than 2 million devices by abusing residential proxy networks and exposed Android Debug Bridge (ADB) connections, enabling monetization and large-scale attacks.",
+  "points": [
+    "Botnet leverages exposed ADB and residential proxies to spread",
+    "Infected devices form a massive network used for DDoS, proxy resale, and fraud",
+    "Rapid growth observed since at least August 2025"
+  ]
+},
+
+
+{
+  "id": "011",
+  "title": "Russia-aligned hackers abuse Viber to deliver malware to Ukrainian targets",
+  "icon": "fa-messaging",
+  "category": "espionage",
+  "risk": "high",
+  "location": "Ukraine",
+  "date": "2026-01-05",
+  "summary": "A Russia-aligned threat actor is using the Viber messaging platform to send malicious ZIP archives that deploy the Hijack Loader and Remcos RAT against Ukrainian military and government entities.",
+  "points": [
+    "Malware delivered via Viber messaging instead of email",
+    "Attack uses decoy LNK files to run loader and RAT",
+    "Advanced evasion tactics make detection difficult"
+  ]
+},
+
+
 
 {
   "id": "009",

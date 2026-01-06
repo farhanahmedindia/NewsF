@@ -1,0 +1,86 @@
+{
+  "id": "012",
+  "title": "Kimwolf Android botnet infects over 2 million devices",
+  "location": "Global",
+  "category": "Botnet",
+  "risk": "high",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "The Kimwolf Android botnet has infected an estimated 2 million Android devices worldwide by exploiting exposed Android Debug Bridge (ADB) services and residential proxy networks, according to cybersecurity researchers.",
+    "The botnet provides its operators with capabilities for distributed denial-of-service (DDoS) attacks, proxy bandwidth resale, and other monetization methods."
+  ],
+
+  "what_happened": [
+    "Cybersecurity firm Synthient reported that the Kimwolf botnet has grown to more than 2 million infected Android devices, primarily through exploiting exposed ADB ports and proxy infrastructure.",
+    "The botnet’s spread is tied to residential proxy networks, where vulnerable devices such as Android TV boxes are turned into proxy nodes or compromised after sale.",
+    "Kimwolf infections have been observed since at least August 2025, and the botnet has been linked to massive DDoS traffic and proxy resale operations."
+  ],
+
+  "who_is_affected": [
+    "Owners of Android devices with exposed ADB interfaces, such as Android TV set-top boxes and similar hardware.",
+    "Networks relying on residential proxy services that may host bot nodes.",
+    "Organizations and internet infrastructure providers affected by large-scale botnet-driven attacks."
+  ],
+
+  "attack_flow": [
+    "Attackers identify Android devices with exposed ADB ports.",
+    "Devices join the Kimwolf botnet via proxy exploitation.",
+    "Compromised devices tunnel traffic, perform proxy forwarding, and accept remote commands.",
+    "Operators monetize the botnet through DDoS services and proxy bandwidth resale."
+  ],
+
+  "business_impact": [
+    "Unauthorized use of consumer devices as botnet nodes.",
+    "Potential service disruption from large distributed attacks.",
+    "Increased operational risk for networks and services targeted by botnet traffic.",
+    "Brand reputation issues for proxy providers and device manufacturers."
+  ],
+
+  "risk_reason": "The combination of exposed Android Debug Bridge services and the abuse of residential proxy networks enables Kimwolf to scale rapidly, evade detection, and launch high-impact operations at internet scale.",
+
+  "what_usually_goes_wrong": [
+    "Android devices ship with ADB exposed by default or without proper security controls.",
+    "Residential proxy networks fail to restrict internal network access and unauthenticated services.",
+    "Lack of visibility over IoT-class hardware behavior and network traffic."
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Disable exposed ADB services on all Android devices where not required.",
+      "Block traffic from known botnet command-and-control (C2) domains at network boundaries."
+    ],
+    "short_term": [
+      "Monitor for unusual outbound traffic patterns indicating botnet participation.",
+      "Audit proxy networks for risky exposure configurations."
+    ],
+    "long_term": [
+      "Enforce strong device hardening for IoT/Android hardware.",
+      "Collaborate with residential proxy providers to identify and mitigate botnet abuse.",
+      "Deploy anomaly detection tools to flag malicious or unauthorized device behavior."
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "Every Android device is infected — only those with exposed ADB or insecure configurations are at highest risk.",
+    "Kimwolf can automatically compromise fully patched and properly configured systems."
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unexpected proxy or tunneling traffic from endpoints.",
+      "Outbound connections to known botnet C2 servers."
+    ],
+    "alerts": [
+      "Detection of botnet signatures in network logs.",
+      "Elevated unusual traffic volumes matching DDoS patterns."
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/kimwolf-android-botnet-infects-over-2.html"
+    }
+  ]
+}
