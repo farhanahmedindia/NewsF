@@ -1,6 +1,24 @@
 [
 
 {
+  "id": "015",
+  "title": "Hackers exploiting VMware ESXi instances with zero-day exploit toolkit",
+  "icon": "fa-server",
+  "category": "vulnerability",
+  "risk": "high",
+  "location": "Global",
+  "date": "2026-01-08",
+  "summary": "Threat actors are actively exploiting VMware ESXi hypervisor instances in the wild using a zero-day exploit toolkit chaining multiple vulnerabilities to escape virtual machine isolation.",
+  "points": [
+    "Zero-day exploit toolkit chaining VMware ESXi vulnerabilities in wild activity",
+    "Initial access linked to compromised VPN infrastructure",
+    "Successful exploitation enables virtual machine escape and host compromise"
+  ]
+},
+
+
+
+{
   "id": "014",
   "title": "WhatsApp leakage allows device fingerprinting via multi-device protocol",
   "icon": "fa-mobile",
