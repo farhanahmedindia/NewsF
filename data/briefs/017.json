@@ -1,0 +1,84 @@
+{
+  "id": "017",
+  "title": "GoBruteforcer Botnet targeting internet-facing Linux servers worldwide",
+  "location": "Global",
+  "category": "Botnet",
+  "risk": "high",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "A sophisticated botnet called GoBruteforcer is actively compromising exposed Linux servers by brute-forcing weak credentials on common internet services.",
+    "The campaign has put more than 50,000 internet-facing servers at risk worldwide, leveraging poorly secured services to install backdoors and botnet components."
+  ],
+
+  "what_happened": [
+    "Researchers reported that the GoBruteforcer botnet is aggressively scanning and brute-forcing internet-exposed services like FTP, MySQL, PostgreSQL, and phpMyAdmin to gain access to servers. :contentReference[oaicite:0]{index=0}",
+    "Once access is achieved, attackers install web shells, downloaders, and bruteforce modules that allow continued control and expansion of the botnet. :contentReference[oaicite:1]{index=1}",
+    "The botnet’s growth is fueled by common weak credential usage and automatic scanning of large numbers of exposed services. :contentReference[oaicite:2]{index=2}"
+  ],
+
+  "who_is_affected": [
+    "Owners and operators of Linux servers with internet-exposed services and weak credentials. :contentReference[oaicite:3]{index=3}",
+    "Providers hosting FTP, database (MySQL, PostgreSQL), and management tools like phpMyAdmin. :contentReference[oaicite:4]{index=4}",
+    "Security teams responsible for internet-accessible infrastructure."
+  ],
+
+  "attack_flow": [
+    "Botnet scans large network ranges for internet-facing services. :contentReference[oaicite:5]{index=5}",
+    "Service endpoints with weak or default credentials are brute-forced. :contentReference[oaicite:6]{index=6}",
+    "Successful logins lead to deployment of bruteforce modules and web shells. :contentReference[oaicite:7]{index=7}",
+    "Compromised hosts join the botnet and can be used to propagate further attacks or execute malicious tasks. :contentReference[oaicite:8]{index=8}"
+  ],
+
+  "business_impact": [
+    "Unauthorised access to critical infrastructure. :contentReference[oaicite:9]{index=9}",
+    "Data breaches or service disruptions caused by compromised servers. :contentReference[oaicite:10]{index=10}",
+    "Reputation and compliance risks for organizations with exposed services. :contentReference[oaicite:11]{index=11}"
+  ],
+
+  "risk_reason": "Botnets that exploit weak credentials on common services can spread widely and compromise large numbers of systems, creating pervasive and persistent threats. :contentReference[oaicite:12]{index=12}",
+
+  "what_usually_goes_wrong": [
+    "Use of default or weak passwords on services exposed to the internet. :contentReference[oaicite:13]{index=13}",
+    "Inadequate monitoring of login attempts and brute-force activity. :contentReference[oaicite:14]{index=14}",
+    "Failure to secure and harden legacy stacks such as XAMPP or phpMyAdmin installations. :contentReference[oaicite:15]{index=15}"
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Enforce strong, unique passwords on all exposed services.",
+      "Disable or firewall off unnecessary internet-facing services."
+    ],
+    "short_term": [
+      "Deploy intrusion detection or honeypots to detect brute-force attempts.",
+      "Audit existing server accounts and rotate default credentials."
+    ],
+    "long_term": [
+      "Implement password policy enforcement and account lockout mechanisms.",
+      "Use MFA and secure access controls for SSH and service admin interfaces."
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "All Linux servers are compromised — only those with weak or default credentials are at highest risk.",
+    "The botnet can operate without some form of credential exposure or weak authentication."
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Repeated failed login attempts on FTP, database services.",
+      "Unexpected web shell installations or unusual scripts on servers."
+    ],
+    "alerts": [
+      "Suspicious login spikes from unusual IPs.",
+      "Detection of brute-force tool signatures in logs."
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "Cybersecurity News",
+      "url": "https://cybersecuritynews.com/gobruteforcer-botnet/"
+    }
+  ]
+}

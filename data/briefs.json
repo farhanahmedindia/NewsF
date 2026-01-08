@@ -32,6 +32,23 @@
   ]
 },
 
+{
+  "id": "017",
+  "title": "GoBruteforcer Botnet targeting internet-facing Linux servers worldwide",
+  "icon": "fa-network-wired",
+  "category": "botnet",
+  "risk": "high",
+  "location": "Global",
+  "date": "2026-01-07",
+  "summary": "The GoBruteforcer botnet aggressively brute-forces weak credentials on exposed Linux servers (FTP, MySQL, PostgreSQL, phpMyAdmin), compromising tens of thousands of hosts and forming a modular botnet.",
+  "points": [
+    "Targets services with weak passwords on internet-facing Linux servers",
+    "Compromises web, database, and management services like FTP, phpMyAdmin, MySQL, and PostgreSQL",
+    "Botnet uses modular payloads including web shells and brute-forcers to propagate"
+  ]
+},
+
+
 
 
 
