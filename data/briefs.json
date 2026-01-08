@@ -16,6 +16,23 @@
   ]
 },
 
+{
+  "id": "016",
+  "title": "Hackers use malicious imageless QR codes to evade defenses",
+  "icon": "fa-qrcode",
+  "category": "phishing",
+  "risk": "medium",
+  "location": "Global",
+  "date": "2026-01-07",
+  "summary": "Attackers are abusing HTML-rendered QR codes built from table cells in phishing emails, bypassing many email security tools and redirecting victims to malicious sites.",
+  "points": [
+    "QR codes rendered in HTML tables bypass traditional image-based defenses",
+    "Codes redirect to malicious domains mimicking recipients’ own domains",
+    "Users may scan codes in email without realizing the threat"
+  ]
+},
+
+
 
 
 {

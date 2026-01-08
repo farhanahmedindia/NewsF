@@ -1,0 +1,84 @@
+{
+  "id": "016",
+  "title": "Hackers use malicious imageless QR codes to evade defenses",
+  "location": "Global",
+  "category": "Phishing",
+  "risk": "medium",
+  "date": "January 2026",
+
+  "executive_summary": [
+    "A recent phishing campaign is abusing QR codes rendered purely with HTML table elements instead of embedded images, allowing the codes to slip past many email defenses.",
+    "These QR codes still scan like traditional codes but can redirect victims to malicious sites that harvest credentials or deliver malware."
+  ],
+
+  "what_happened": [
+    "Rather than including a QR image in the email body, attackers build the QR pattern using hundreds of tiny HTML table cells with black and white background colors, forming a scannable code.",
+    "Because many secure email gateways focus on traditional image scanning, this HTML-based QR code technique can evade detection and be delivered to users’ inboxes.",
+    "Campaign emails observed between late December 2025 contained minimal lure text and a block that appears as a QR code, urging the recipient to scan it with a mobile device."
+  ],
+
+  "who_is_affected": [
+    "Email users globally who receive unsolicited messages containing QR codes.",
+    "Organizations relying solely on traditional email defense tools without DOM-aware inspection.",
+    "Individuals who scan QR codes without verifying their source or intent."
+  ],
+
+  "attack_flow": [
+    "Threat actor crafts an HTML email with a table-based QR code rather than an image.",
+    "Email gateways fail to flag the code as malicious due to lack of image scanning triggers.",
+    "User scans the rendered QR with a mobile device, unknowingly navigating to a malicious URL.",
+    "The destination site may harvest credentials, deliver malware, or perform other malicious actions."
+  ],
+
+  "business_impact": [
+    "Credential theft or fraud following phishing success.",
+    "Malware or ransomware deployment via URLs reached through malicious QR codes.",
+    "Increased support burden from compromised endpoints caused by phishing."
+  ],
+
+  "risk_reason": "By moving beyond image-based QR codes and using HTML rendering, attackers can evade many existing security filters, making this form of phishing more effective and harder to detect.",
+  
+  "what_usually_goes_wrong": [
+    "Security tools that rely primarily on image scanning miss non-image QR patterns.",
+    "Users see a familiar QR code and scan without suspicion.",
+    "Defenders underestimate the threat posed by non-standard code renderings."
+  ],
+
+  "recommended_actions": {
+    "immediate": [
+      "Warn users that scanning QR codes from unsolicited emails carries risk equivalent to clicking unknown links.",
+      "Update email security gateways to use DOM-aware analysis that recognizes table-constructed QR codes."
+    ],
+    "short_term": [
+      "Monitor for spikes in phishing attempts using QR codes and suspicious domain redirects.",
+      "Implement warnings or policies around QR code scanning for enterprise devices."
+    ],
+    "long_term": [
+      "Educate staff on quishing (QR-based phishing) threats as part of security awareness training.",
+      "Collaborate with email filter vendors to improve detection of non-image QR encodings."
+    ]
+  },
+
+  "what_this_does_not_mean": [
+    "All QR codes in email are malicious — many are legitimate.",
+    "QR scanning apps or devices are compromised as a whole."
+  ],
+
+  "monitoring": {
+    "signs": [
+      "Unusual outbound traffic following email QR scans.",
+      "Users reporting unexpected redirects after scanning codes in email."
+    ],
+    "alerts": [
+      "Multiple users scanning similar QR codes and visiting the same suspicious domain.",
+      "Email systems flagging dense table structures consistent with HTML-based QR constructs."
+    ]
+  },
+
+  "sources": [
+    {
+      "title": "Cybersecurity News",
+      "url": "https://cybersecuritynews.com/hackers-using-malicious-imageless-qr-codes/"
+    }
+  ]
+}
